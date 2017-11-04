@@ -1,0 +1,68 @@
+/*
+样式重置
+2016/1/9
+*/
+
+@charset "utf-8";
+/* 头部样式*/
+.navbar { min-width:948px; }
+
+/* 左侧导航样式 */
+
+/* 中部表格样式*/
+/*.content { min-height:1000px;min-width:700px;}*/
+.search { position:absolute;right:37px;top: 45px;}
+.input-xlarge { width: 170px;}
+.row-fluid { width:90%;margin:10px auto 0;min-height:400px;}
+.row-fluid table {margin-top:10px;color:#333333;text-align:center;letter-spacing:2px;width:100%;border-collapse:collapse;cursor:pointer;}
+.row-fluid table th { height:30px;}
+.row-fluid table th,td {border:1px solid #C8C8CB;height:32px;}
+.row-fluid table tr:hover { background:#F6F6F6;}
+.pagination {  width:450px;margin:0 auto 0; margin-top:15px;padding-bottom:15px}
+.nowPage{color:#000000;font-size:15px;font-weight:bold;}
+
+/* 底部样式*/
+footer { text-align:center;}
+
+/*清除样式*/
+/* CSS Document */
+body,html{ margin:0 auto;min-width:650px;max-width:1800px;}
+/*body{ overflow-y:scroll;}*/               /*添加滚动条*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+/*body{font-size:12px;}*/
+img{border:none;}
+li{list-style:none;}
+/*input,select,textarea{outline:none;border:none; background:none;}*/
+textarea{resize:none;}
+a{text-decoration:none; color:#656565;}
+
+/*清浮动*/
+.clearfix:after{content:"";display:block;clear:both;}
+.clearfix{zoom:1;}
+.fl{float:left;}
+.fr{float:right;}
+
+/*客户列表*/
+.city {width:150px;}
+
+
+
+/*添加管理员页面*/
+
+/* 添加管理员*/
+.manager{height:200px; width:90%; margin:20px auto; border:1px solid #777;}
+.list4{padding:10px 5px; float:left;}
+.list4 li{padding:12px; font-size:18px;}
+
+/*管理员列表操作*/
+.operation{height:200px; width:90%; margin:0 auto; border:1px solid #777;}
+.operate{padding-left:20px; light-height:0px;}
+
+/*企业类型遮罩窗体*/
+.enp-tab tr th { text-align:right;}
+input[name='enterpriseTypeSub'],input[name="enpTypeSub"] { margin-left:10px;width:35px;height:30px;font-size:35px;margin-top:-5px; }
+ /*非首次刻章声明*/
+ .statementTable tr th { text-align:right;}
+input[name='statementSub'],input[name='sealStatementSub'] { margin-left:10px;width:35px;height:30px;font-size:35px;margin-top:-5px; }
+#picturePage img{width:80%;padding: 4px 1px 1px 26px;height: 150px;}
+a:focus{outline:none}

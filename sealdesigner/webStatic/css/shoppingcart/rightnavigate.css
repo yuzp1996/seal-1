@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.toolbar-item,.toolbar-layer{background:url(/webStatic/img/ShoppingCart/index/toolbar5.gif) no-repeat;}
+.toolbar{position:fixed;right:0px;bottom:100px;}/*假设网页宽度为1200px，导航条在右侧悬浮*/
+.toolbar-item{display:block;width:52px;height:52px;margin-top:1px;position:relative;-moz-transition:background-position 1s;-ms-transition:background-position 1s;-o-moz-transition:background-position 1s;-webkit-moz-transition:background-position 1s;transition:background-position 1s;}
+.toolbar-item:hover .toolbar-layer{opacity:1;filter:alpha(opacity=100);transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);}
+.toolbar-item-personalCenter{background-position:0 0px;}/*个人中心*/
+.toolbar-item-personalCenter:hover{background-position:0 -60px;}
+.toolbar-item-trolley{background-position: 0 -120px;}/*购物车*/
+.toolbar-item-trolley:hover{background-position: 0 -180px;}
+.toolbar-item-myOrder{background-position: 0 -240px;}/*我的订单*/
+.toolbar-item-myOrder:hover{background-position: 0 -300px;}
+.toolbar-item-feedback{background-position:0 -360px;}/*联系客服*/
+.toolbar-item-feedback:hover{background-position:0 -420px;}
+.toolbar-item-top{background-position:0 -480px;}/*返回顶部*/
+.toolbar-item-top:hover{background-position:0 -540px;}
+.toolbar-layer{position:absolute;right:46px;bottom:-10px;width:172px;opacity:0;filter:alpha(opacity=0);
+transform-origin: 95% 95%;-moz-transform-origin: 95% 95%;-ms-transform-origin: 95% 95%;-o-transform-origin: 95% 95%;-webkit-transform-origin: 95% 95%;transform:scale(0.01);
+-moz-transform:scale(0.01);-ms-transform:scale(0.01);-o-transform:scale(0.01);-webkit-transform:scale(0.01);transition:all 1s;-moz-transition:all 1s;-ms-transition:all 1s;-o-transition:all 1s;-webkit-transition:all 1s;}

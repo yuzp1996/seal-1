@@ -1,0 +1,125 @@
+.ftw {
+    height:244px;
+}
+dl {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+dt {
+    display:block;
+}
+#ftbox {
+    background: #535353;
+    width: 100%;
+    border-bottom: 1px solid #313131;
+}
+#ft, #ff {
+    margin: 0px auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.f_1 {
+    float: left;
+    padding-top: 5px;
+}
+.ftw dl {
+    margin-top: 0px;
+}
+#ft {
+    margin: 0 auto;
+    display: block;
+    width:80%;
+    max-width: 1220px;
+}
+#ft dl.dl1 {
+    width: 30%;
+}
+.end_1 {
+    background: url(../images/end_1.png) 0 0 no-repeat;
+    float: left;
+}
+.cpn_name {
+    font-size: 22px;
+    line-height: 25px;
+    color: #b5b5b5;
+    padding-left: 8px;
+}
+#ft dl.dl2 {
+    width: 25%;
+}
+
+#ft dl.dl3 {
+    width: 42%;
+}
+.end_2 {
+    margin-top: -5px;
+}
+.ftw ._link {
+    font-size: 22px;
+    _font-size: 22px;
+    line-height: 40px;
+    color: #b5b5b5;
+    padding-top: 15px;
+    padding-left: 40px;
+    background: url(/webStatic/img/icon/phone.png) 0px 19px no-repeat;
+}
+.lianxi_1 {
+    padding-top: 8px;
+    color: #63a7e2;
+    font-size: 28px;
+    _font-size: 28px;
+    text-indent: left;
+    height: 40px;
+    line-height: 40px;
+}
+.ftw .shouqian {
+    color: #c2c2c2;
+    font-size: 14px;
+    line-height: 40px;
+    _font-size: 14px;
+}
+.clear {
+    clear: both;
+}
+.ftw ._link_1 {
+    padding-top: 15px;
+    font-size: 14px;
+    _font-size: 14px;
+    line-height: 30px;
+}
+.ftw .shouqian {
+    color: #c2c2c2;
+    font-size: 14px;
+    line-height: 40px;
+    _font-size: 14px;
+}
+.footqq {
+    padding-left: 35px;
+    background: url(/webStatic/img/icon/qq.png) 0px center no-repeat;
+}
+.footemail {
+    padding-left: 35px;
+    background: url(/webStatic/img/icon/email.png) 0px center no-repeat;
+}
+.footadd {
+    padding-left: 35px;
+    background: url(/webStatic/img/icon/add.png) 0px center no-repeat;
+}
+#ftbox2 {
+    background: #535353;
+    width: 100%;
+    border-top: 1px solid #838383;
+}
+.ftw .box {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    font-size: 12px;
+    _font-size: 12px;
+    color: #a1a0a0;
+    line-height: 40px;
+    height: 40px;
+}

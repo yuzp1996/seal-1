@@ -1,0 +1,35 @@
+/*订单评价*/
+.orderEvaluate{
+    width:98%;
+    overflow:hidden;
+    margin:30px  auto 30px;
+}
+.evaluate-content{
+    margin:5px 0 0 10px;
+    width:96%;
+    overflow:hidden;
+    border: 1px solid #C8C8CB;
+}
+.evaluate-left{
+    width:30%;
+    height:95%;
+    float:left;
+    overflow:hidden;
+}
+.evaluate-right{
+    width:70%;
+    height:90%;
+    float:right;
+    overflow:hidden;
+}
+.orderEvaluatePicture{
+    margin:20px auto 10px;
+    margin:8% 0% 0% 10%;
+    border-radius: 3%;
+    width: 75%;
+    height:140px;
+}
+.evaluateText{
+    margin:20px auto 0 auto;
+    width:90%;
+}

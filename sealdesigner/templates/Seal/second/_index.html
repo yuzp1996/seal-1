@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户详细信息</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/all.css">
+    <!-- Demo page code -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        .userInfoList th { width:120px;}
+        .userInfoList td { width:300px;padding-left:5px;;text-align:left}
+        .userInfoList td  input{width:95%;margin:0;border:none;margin-left:-5px;}
+        #userStyle { width:100%;height:100%;margin:0;margin-left:-5px;}
+        #backUaerInfoList {float:right;height:30px;width:80px;margin-left:15px; }
+        #userInfoSubmit { float:right;height:30px;width:80px;}
+        .userAddInfo { width:380px;height:90px;border:solid 1px #898989;box-shadow: 7px 6px 6px #898989;margin-top:15px;padding:12px;margin-left:20px;float:left}
+        .userAddInfo li:nth-child(4) { font-size:12px;float:right;}
+        .userAddInfo li input { vertical-align:text-bottom}
+        .userOrderInfo { float:left;width:100%;margin-top:15px;}
+        .userOrderInfo tr td{height: 34px;min-height:34px;}
+        .userOrderInfo tr th{height:40px;}
+    </style>
+</head>
+    <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+    <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+    <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+    <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+    <!--<![endif]-->
+
+    <!--引入公用部分左侧导航栏和头部样式-->
+    {% include "Seal/include/nav.html" %}
+
+    <!--中间部分-->
+    <div class="content">
+        <ul class="breadcrumb">
+            <li>客户数据<span class="divider"> >>> </span></li>
+            <!--<li><a>客户数据</a> <span class="divider"> >>> </span></li>-->
+            <li class="active">客户列表</li>
+            <li><span class="divider"> >>> </span>客户详细信息</li>
+            <li style="float:right"><a href="adminindex">返回客户列表</a></li>
+        </ul>
+        <div class="row-fluid">
+            <!--基本信息-->
+            <div>
+                <h5>
+                        基本信息：
+                    <input type="hidden" value="{{userId}}" class="userId"/>
+                    <input type="hidden" value="{{name}}" class="userInfoOpen"/>
+                </h5>
+                <table>
+                    <tbody class="userInfoList" style="width:80%;margin:0 auto;">
+                        <tr>
+                            <th>客户名:</th><td  class="userName" ></td>
+                            <th>所属地区:</th><td  class="userCity"></td>
+                            <td rowspan="4"  width="200px" height="160px" ><img src="/webStatic/img/4041.jpg" class="userPic" width="95%" height="90%" alt="客户照片"/> </td>
+                        </tr>
+                        <tr>
+                            <th>注册时间:</th><td class="userRegisterTime"></td>
+                            <th>联系电话:</th><td  class="userPhone"></td>
+                        </tr>
+                        <tr>
+                            <th>登录时间:</th><td  class="userLoginTime"></td>
+                            <!--<th>登录密码:</th><td><input type="text" class="userPassWord"/></td>-->
+                            <th>邮箱:</th><td  class="userEmail"></td>
+                        </tr>
+                        <tr>
+                            <th>状态:</th>
+                            <td>
+                                <select class="userStyle">
+                                    <option value="1">正常使用</option>
+                                    <option value="0">禁用状态</option>
+                                </select>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
+            <!--基本信息结束-->
+            <!--收货信息-->
+            <div>
+                <h5>
+                    收货信息：
+                </h5>
+                <div class="userAddInfoList">
+                </div>
+            <!--收货信息结束-->
+            <br />
+            <!--订单信息-->
+            <div class="userOrderInfo">
+                <h5>
+                    订单：
+                </h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="byName">订单日期</th>
+                            <th class="byCity">商品类型</th>
+                            <th class="byRegisterTime">状态</th>
+                            <th class="byLastTime">付款金额</th>
+                            <th>是否付款</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="userOrderInfoLists">
+                        <!--数据库获取用户定单-->
+                    </tbody>
+                </table>
+            </div>
+            <!--订单信息结束-->
+            <br />
+            <!--管理员备注-->
+            <div   style='float:left;width:100%;margin-top:15px;'>
+                <h5>
+                    管理员备注：<span><input type="text" style="width:74%;" class="userRemark"/></span>
+                </h5>
+
+            </div>
+            <input type="button" value="返回" id="backUaerInfoList">
+            <input type="button" value="保存" id="userInfoSubmit"/>
+
+        </div>
+    </div>
+    </div>
+    <!--底部开始-->
+    <footer>
+        <hr>
+        <p>&copy; 2016 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部开始-->
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/webStatic/js/admin/second/_index.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+    <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车商品详情</title>
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/public/main.css" />
+    <link rel="stylesheet" href="/webStatic/css/user/stylesheets/userDetails.css" type="text/css" />
+    <link rel="stylesheet" href="/webStatic/css/user/stylesheets/trolley.css" type="text/css">
+
+</head>
+<body style="background-color: #F5F5F5;background-image:url(../webStatic/img/ShoppingCart/yinzhang.jpg)"  >
+<body>
+    <!--引入公用部分-->
+    {% include "Users/include/nav.html" %}
+    <!--公共部分结束-->
+<div class="module">
+    <div class="location" style="color: rgb(112, 115, 134);">
+        <p>当前位置：<a href="personalCenter">个人中心</a>><a href="trolley">购物车</a>>购物车商品详情</p>
+    </div>
+    <div class="userDetailsBody" style="height:100%;margin-bottom: 5%;">
+        <div class="backLocation"><a href="/">返回网站首页</a></div>
+        <hr style="margin-top:30px;border-bottom: 1px solid #B81C20;">
+        <div class="trolleyDetail" id="trolleyDetail">
+            <div class="troDeLeft" id="troDeLeft">
+                <div class="troDeLeft_up">
+                    <div id="picture">
+                    </div>
+                    <div  id="samplePicture">
+                    </div>
+                </div>
+                <div class="troDeLeft_down" id="troDeLeft_downA">
+                    <input type="hidden" name="trolleyId" id="trolleyId" value="{{trolleyId}}">
+                    <input type="hidden" name="mateClass" id="mateClass" value="{{mateClass}}">
+                    <input type="hidden" name="comeFrom" id="comeFrom" value="{{comeFrom}}">
+                    <input type="hidden" name="orderState" id="orderState" value="{{orderState}}">
+                    <input type="text" name="materialId" id="materialId" style="display:none" >
+                    <input type="text" name="colorNames" id="colorNames" style="display:none" >
+                    <input type="text" name="colorId" id="colorId" style="display:none" >
+                    <input type="text" name="colorNames" id="fontNames" style="display:none" >
+                    <input type="text" name="colorId" id="fontId" style="display:none" >
+
+
+                    <div style="border-bottom:1px dashed #C8C8CB;"id="usedInFor">
+                        <span style="margin-left:10px">板式配置信息：</span>
+                        <a id="change"  style="display:none;float:right;color:red;cursor:pointer;">修改</a>
+                        </div>
+                    <div style="margin-left:50px;margin-top:30px">
+                        <div id="inFor"></div>
+                        <div id="inForChange" style="display:none"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="troDeRight">
+                <div class="troDeRight_up">
+                    <ul>
+                        <li><span>商品：</span><label  id="materialName"  style="display:inline-block;color:red"></label></li>
+                        <li><span>商品类型：</span><label  id="sealClass"  style="display:inline-block;color:red"></label></li>
+                        <li><span>产品编号：</span><label  id=""  style="display:inline-block"></label></li>
+                        <li><span>介绍：</span><label id="materialIntroduction" style="display:inline-block"></label></li>
+                    </ul>
+                </div>
+                <div class="troDeRight_centre">
+                    <form>
+                        <ul>
+                            <li><a id="editB" onclick="editB(this)" style="display:none;float:right;color:red;cursor:pointer;">修改</a></li>
+                            <li><span>颜色：</span><label id="colorName" style="display:inline-block"></label><select id="colorNameB" name="colorNameB" style="display:none;height:28px;margin-top:1px"></select></li>
+                            <li id="fontNameA"><span>字体：</span><label id="fontName"  style="display:inline-block"></label><select id="fontNameB" name="fontNameB" style="display:none;height:28px;margin-top:1px"></select></li>
+                            <li><span>数量：</span><label id="number" style="display:inline-block"></label>
+                                <span style="display:none;height:30px;text-align:left" id="numberB" >
+                                    <a id="sub" href="javascript:void(0);" style="font-size:24px">-</a>
+                                    <input type="text" value="1" id="bookNum" name="number" style="width:24px;height:18px;margin-top:1px">
+                                    <a id="add" href="javascript:void(0);" style="font-size:18px">+</a>
+                                </span>
+                            </li>
+                            <li><span>单价：</span><label id="price" style="display:inline-block"></label></li>
+                            <li><span>总额：</span><label id="amount" style="display:inline-block"></label></li>
+                            <li id="companyA"><span>企业公司类型：</span><label id="company" style="display:inline-block"></label><select id="companyB" name="companyB" style="display:none;height:28px;margin-top:1px"></select></li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="troDeRight_down" id="troDeRight_down">
+                    <div id="troDeRight_affix" style="">
+                        <div style="width:100px;margin-left:5px">
+                            <span style="float:right">附件信息：</span>
+                        </div>
+                        <form id="seal_form" method="post" enctype="multipart/form-data">
+                            <input type="text" name="companyId" id="companyId" style="display:none">
+                            <input type="text" name="userDataId" value="" id="userDataId"  style="display:none">
+                            <div class="troDeRight_affix">
+                                <ul class="companyProof" id="companyProof"></ul>    <!--企业声明-->
+                                <ul class="resharpenProof" id="resharpenProof"></ul>     <!--重刻声明-->
+                            </div>
+                        </form>
+
+                    </div>
+                    <div style="position:absolute;right:0;bottom:0 ">
+                        <input type="button" style="width: 100px;" class="btn" value="返回" onclick="window.history.go(-1);">
+                        <input type="button" style="width: 100px;" class="btn" id="sure" value="确认">
+                        <input type="button" style="width: 100px;" class="btn" id="goB" value="去下单">
+                        <input type="button" style="diaplay:none;width: 100px; " class="btn" id="changeback" value="下单">
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</div>
+    <!--底部公用部分-->
+    {% include "ShoppingCart/include/footer.html" %}
+    <!--底部公用部分结束-->
+
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/webStatic/js/user/first/personalCenter.js" type="text/javascript"></script>
+    <script src="/webStatic/js/user/second/_trolley.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/pageJs.js" type="text/javascript"></script>
+    <script src="/webStatic/public/jquery.form.js" type="text/javascript"></script>        <!--引入表单提交包文件-->
+</body>
+</html>

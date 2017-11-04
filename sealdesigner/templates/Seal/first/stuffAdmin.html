@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>材质管理</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/all.css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <!--[if lt IE 6 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <body class="">
+  <!--<![endif]-->
+    <!-- 头部导航-->
+    <!--引入公用部分-->
+    {% include "Seal/include/nav.html" %}
+
+    <!--中间部分-->
+    <div class="content">
+
+        <!--材质管理-->
+        <ul class="breadcrumb">
+            <li>商品管理<span class="divider"> >>> </span></li>
+            <li class="active">材质管理</li>
+        </ul>
+
+        <!--添加材质-->
+        <div class="header">
+            <div class="addStuff">
+                <button class="addButton" style="margin-bottom:10px;" type="button" href='#modal-container-183169' data-toggle='modal'><i class="icon-plus"></i> 添加材质</button>
+            </div>
+        </div>
+
+        <!--材质管理表-->
+        <div class="row-fluid" width="100%" style="min-height:280px;">
+            <div >
+                <table>
+                    <thead>
+                        <tr width='100%'>
+                            <th width="33.3%">名称</th>
+                            <th width="33.3%">是否启用</th>
+                            <th width="33.3%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="stuff">
+                    </tbody>
+                </table>
+            </div>
+
+               <div id="user_tab"></div>
+                <div class="span12">
+                      <!--  触发遮罩窗体-->
+                    <input type="hidden" class="materialQualityId" value=""/>    <!--把要修改或要删除的数据id放在隐藏域中-->
+                    <div id="modal-container-183169" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+                         style="height:200px;width:300px">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 >
+                                添加材质:
+                            </h3>
+                    </div>
+                        <div >
+                            <input id="Id" type="hidden">
+                            <br />
+                            <div>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;材质名称:<input class="materialName" id="materialName" style="width:100px; margin-left:23px;"></td><br>
+                            </div>
+                            <br />
+                            <div>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;是否启用:
+                                    <input type="radio" name="isShowRadio" checked style="margin-left:20px" value="1"/><b>启用</b><input type="radio" name="isShowRadio" style="margin-left:20px;" value="0"/><b>不启用</b>
+                                </td>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer" >
+                             <button id="btncancle" class="btn" data-dismiss="modal" aria-hidden="true">取消</button><input class="btn btn-primary" type="button" value="添加">
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!--分页-->
+        <div class="pagination" style="width:300px;margin:0 auto 0; margin-top:15px;text-align:center">
+            <ul class="page">
+            <!--数据库调取分页-->
+            </ul>
+        </div>
+    </div>
+
+    <!--中间部分结束-->
+
+    <!--底部开始-->
+    <footer>
+        <hr>
+        <p>&copy; 2015 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部结束-->
+
+    <script src="/webStatic/public/lib/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/webStatic/js/admin/first/stuffAdmin.js"></script>
+    <script src="/webStatic/js/public/pageJs.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+    <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+    <!--<script src="/webStatic/js/admin/first/material/stuffAdmin.js" type="text/javascript"></script>-->
+</body>
+</html>

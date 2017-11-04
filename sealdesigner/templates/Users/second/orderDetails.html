@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
+    <title>我的订单</title>
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/public/main.css" />
+    <link href="/webStatic/css/user/stylesheets/userDetails.css" rel="stylesheet" type="text/css" />
+    <link href="/webStatic/css/user/stylesheets/myOrder.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: #F5F5F5;">
+    <!--引入公用部分-->
+    {% include "Users/include/nav.html" %}
+    <!--公共部分结束-->
+<div class="module">
+    <div class="location" style="color: rgb(112, 115, 134);">
+        <p>当前位置：<a href="/Users/personalCenter">个人中心</a>>我的订单>订单详情</p>
+    </div>
+    <div class="userDetailsBody" style="height:auto;">
+        <div class="backLocation"><a href="/">返回网站首页</a></div>
+        <hr style="margin-top:30px;border-bottom: 1px solid #B81C20;">
+        <input type="hidden" value="{{orderId}}" class="orderId"/>
+        <input type="hidden" value="{{orderState}}" class="orderState" id="orderState"/>
+        <div class="orderDetailsBody">
+            <div class="goods">
+                <div class="body-content">
+                    <div class="body-left">
+                        <div class="body-picture">
+                            <img src="" class="pictureAmg" />
+                        </div>
+                    </div>
+                    <div class="body-right">
+                        <div class="right-content">
+                            <ul>
+                                <li>
+                                    <span>商品：</span>
+                                    <span_right>数量：</span_right>
+                                </li>
+                                <li>
+                                    <span>商品类型：</span><span></span>
+                                    <span_right>单价：</span_right>
+                                </li>
+                                <li>
+                                    <span>颜色：</span>
+                                    <span_right>字体：</span_right>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-foot"style="height:auto;">
+                <div class="foot-left"style="height:auto;">
+                    <div style="border-bottom:1px dashed #C8C8CB;">
+                        <span style="margin-left:10px">收货人信息：</span>
+                    </div>
+                    <div class="consignee">
+                        <ul>
+                            <li><span>收货人：</span><span class="people"></span></li>
+                            <li><span>收货地址：</span><span class="address"></span></li>
+                            <li><span>联系方式：</span><span class="phone"></span></li>
+                        </ul>
+                        <a type="hidden" href="#" style="float:right;color:red;"class="manage">修改</a>
+                    </div>
+                    <div style="border-bottom:1px dashed #C8C8CB;margin:10px  auto 0;">
+                         <span style="margin-left:10px">客服反馈：</span>
+                    </div>
+                    <div class="feedback">
+                    </div>
+                </div>
+                <div class="foot-right">
+                    <div class="foot-head">
+                        <ul>
+                            <li>
+                                <span>下单日期：</span><span style="text-align:left;"class="a"></span>
+                            </li>
+                            <li>
+                                <span>接单日期：</span><span style="text-align:left;"class="b"></span>
+                            </li>
+                            <li>
+                                <span>付款方式：</span><span style="text-align:left;"class="c"></span>
+                            </li>
+                            <li>
+                                <span>订单状态：</span><span style="text-align:left"class="d"></span>
+                            </li>
+                            <li>
+                                <span>使用优惠券：</span><span style="text-align:left;"class="e"></span>
+                            </li>
+                            <li>
+                                <span>总额：</span><span style="text-align:left;"class="f"></span>
+                            </li>
+                            <li>
+                                <span>备注：</span>
+                                <!--<input class="remark" type="text" placeholder="请输入您的订单要求" style="height:32px;width:250px;">-->
+                                <input class="remark" type="text" style="height:32px;width:250px;" readonly="true">
+                            </li>
+                            <li style="height:90px;">
+                                <div class="body-back">
+                                    <!--<a href="/Users/trolley" role="button" class="backShopping">返回购物车</a>-->
+                                    <!--<p style="margin-left: 110px;">(查看订单详情)</p>-->
+
+                                    <input class="button-back" type="button" value="返回" name="userReturn">
+                                    <input class="take-goods" type="button" value="确认收货" name="userReturn" style="display:none">
+                                </div>
+                            </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!--触发遮罩窗体-->
+        <div id="modal-container-666" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="height:auto;width:410px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size: 25px;">×</button>
+                <h4></h4>
+            </div>
+            <div class="form-box" style="width:100%;">
+                <div class="item item-title  newAddress">
+                    <span class="item-label">新增收货地址</span>
+                    <span class="ts1">电话号码、手机号选填一项，其余均为必填项</span>
+                </div>
+                <div class="item item-title changeAddress" style="display:none">
+                    <span class="item-label">修改</span>
+                    <span class="ts1">收货地址详情</span>
+                </div><div class="receiveAddId"></div>
+                <div>
+                    <div class="item ">
+                        <span class="item-label ">
+                            所在地区<i>*</i>
+                        </span>
+                        <div class="ks-clear clearfix">
+                            <select  id="province" style="width:109px;">
+                                <option value="0">请选择省份</option>
+                            </select>
+                            <select id="area" class="areaId" name="areaId" style="width:109px;">
+                                <option value="0">请选择地区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="item-label">
+                            详细地址<i>*</i>
+                        </span>
+                        <div class="ks-combobox-input-wrap">
+                            <textarea name="addInfor" class="ks-combobox-input i-ta tsl disabled addInfor " placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="item-label">
+                            收货人姓名<i>*</i>
+                        </span>
+                        <div class="item-warp">
+                            <input type="text"class="i-text addPeople"value="" name="addPeople" placeholder="长度不超过25个字符"/>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="item-label">
+                            电话/手机号码<i>*</i>
+                        </span>
+                        <div class="item-warp">
+                            <input type="text"class="i-text addPhone"name="addPhone" onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';} "/>
+                        </div>
+                    </div>
+                    <div class="item item-set-default">
+                        <input id="SetDefault" class="i-chk isDefault" type="checkbox" checked=true name="isDefault" value="0">
+                        <label for="SetDefault">设置为默认收货地址</label>
+                    </div>
+                    <div class="item">
+                        <input type="button" class="btnn" value="保存">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--触发遮罩窗体结束-->
+        <!--投机取巧-->
+        <a href="" class="doubleClick"></a>
+    <!--底部公用部分-->
+    {% include "ShoppingCart/include/footer.html" %}
+    <!--底部公用部分结束-->
+
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/pageJs.js" type="text/javascript"></script>
+    <!--page公用的js-->
+    <script src="/webStatic/js/user/first/orderDetails.js" type="text/javascript"></script>
+    <script src="/webStatic/js/user/first/receiptAddress.js" type="text/javascript"></script>
+</body>
+</html>

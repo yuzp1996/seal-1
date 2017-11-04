@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>日志管理</title>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+
+        <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+        <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/all.css">
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <body class="">
+  <!--<![endif]-->
+
+    <!--引入公用部分-->
+    {% include "Seal/include/nav.html" %}
+
+    <!--中间部分-->
+    <div class="content">
+        <ul class="breadcrumb">
+            <li class="active">订单管理<span class="divider"> >>> </span></li>
+            <li class="active">订单管理</li>
+        </ul>
+        <div class="header">
+            <select class="selectOrder" style="height:30px;width:150px;">
+                <option value="0">开始时间</option>
+                <option value="1">2015-01</option>
+                <option value="2">2016-01</option>
+                <option value="3">2017-01</option>
+            </select>
+            <select class="selectOrder" style="height:30px;width:150px;">
+                <option value="0">结束时间</option>
+                <option value="1">2015-12</option>
+                <option value="2">2016-12</option>
+                <option value="3">2017-12</option>
+            </select>
+        </div>
+        <div class="row-fluid" width="100%" style="min-height:280px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="20%">用户</th>
+                            <th width="30%">IP</th>
+                            <th width="20%">操作时间</th>
+                            <th width="30%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="lists">
+                        <!--订单列表，从后台读取-->
+                    </tbody>
+                </table>
+
+        </div>
+    </div>
+    <!--中间部分结束-->
+    <!--底部开始-->
+    <footer>
+        <hr>
+        <p>&copy; 2015 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部开始-->
+
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+
+    <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+</body>
+</html>

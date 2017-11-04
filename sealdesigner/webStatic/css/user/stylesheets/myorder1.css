@@ -1,0 +1,494 @@
+/*我的订单
+   ----订单列表*/
+   /*--所有订单选择框*/
+   .all0rder{
+        float:left;
+        text-align:end;
+        margin-top:5px;
+        margin-left: 20px;
+   }
+    /*--返回首页*/
+   .backIndex{
+        float:right;
+        height: 30px;
+        width: 100px;
+        text-align:end;
+        font-size:15px;
+        margin-top:12px;
+        margin-right: 20px;
+   }
+    .orderList{
+         width:90%;
+         margin:0 auto 0;
+         min-height:400px;
+     }
+    .orderList table  {
+        margin-top:20px;
+        color:#333333;
+        text-align:center;
+        letter-spacing:2px;
+        width:100%;
+        border-collapse:collapse;
+        cursor:pointer;
+    }
+    .orderList table td {
+        height:30px;
+    }
+    .orderHead  {
+        border:2px solid #F6F6F6;
+    }
+    .orderContent{
+        border:2px solid #e4e4e4;
+        height:120px;
+    }
+    .orderHead1{
+        width:35%;
+        border:1px solid #F6F6F6;
+    }
+    .orderHead2{
+        width:9%;
+        border:1px solid #F6F6F6;
+    }
+    .orderHead3{
+        width:9%;
+        border:1px solid #F6F6F6;
+    }
+    .orderList-details{
+        margin-top:20px;
+    }
+    .orderBody{
+        background:#e4e4e4;
+        height:40px;
+    }
+    .orderBody1{
+        float:left;
+        margin-left:20px;
+        margin-top:7px;
+    }
+    .orderBody2{
+        float:left;
+        margin-left:10px;
+        margin-top:7px;
+    }
+    .orderBody3{
+        float:right;
+        margin-right:30px;
+        margin-top:15px;
+        font-size:20px;
+    }
+    .orderContent  h{
+        float:left;
+        margin-left:30px;
+    }
+    .content1-1{
+        width:70%;
+    }
+    .content1{
+        width:35%;
+    }
+    .content2{
+        width:9%
+
+    }
+    .content3{
+        width:19%;
+
+    }
+    .picture{
+        margin:0px auto 0 auto;
+        margin:0% 0% 0% 5%;
+        height: 90px;
+        width: 30%;
+        float: left;
+    }
+    .picture-img{
+        margin:0% 0% 0% 2%;
+        border-radius: 3%;
+        height:100px;
+
+    }
+    .center{
+        margin-top:10px;
+    }
+    /*我的订单
+   ----订单详情*/
+    .orderDetailsBody{
+        width:90%;
+        overflow:hidden;
+        margin:30px  auto 30px;
+    }
+    .body-content{
+        width:96%;
+        height:160px;
+        border: 1px solid #C8C8CB;
+        margin-bottom: 10px;
+
+    }
+    .body-left{
+        margin:5px  auto 0;
+        width:30%;
+        height:160px;
+        float:left;
+        overflow:hidden;
+    }
+    .body-right{
+        margin:25px  auto 0;
+        width:70%;
+        height:160px;
+        float:right;
+        overflow:hidden;
+    }
+    .body-foot{
+        margin:30px  auto 0;
+        width:100%;
+        height:350px;
+        float:foot;
+        overflow:hidden;
+    }
+    /*--订单图片*/
+    .body-picture{
+        margin:0px auto 20px auto;
+        margin:0% 0% 0% 20%;
+        height: 160px;
+        width: 150px;
+        float: left;
+    }
+    .pictureAmg {
+        margin:0px auto 0 auto;
+        border-radius: 3%;
+        width: 100%;
+    }
+    /* .right-content{
+        height:300px;
+    }*/
+    .body-right ul li{
+        height:30px;
+        line-height:30px;
+        border-bottom:1px dashed #C8C8CB;
+    }
+    .body-right ul li span{
+        display:inline-block;
+        margin-left:5px;
+        width:100px;
+        text-align:right;
+    }
+    .body-right ul li span_right{
+        display:inline-block;
+        margin-right:150px;
+        width:200px;
+        float:right;
+    }
+     /*--订单日期等内容*/
+    .foot-head{
+        margin:2px  auto 0;
+        width:100%;
+        float:center;
+    }
+    .foot-head ul li{
+        height:35px;
+        width:100%;
+        line-height:40px;
+        border-bottom:1px dashed #C8C8CB;
+    }
+    .foot-head ul li span{
+        display:inline-block;
+        width:150px;
+        text-align:right;
+    }
+     /* --客服反馈*/
+     .foot-left{
+        width:45%;
+        height:100px;
+        float:left;
+        margin:10px  auto 0;
+     }
+     .feedback{
+        border: 1px solid #898989;
+        height: 100px;
+        margin-left: 10px;
+        margin-top: 15px;
+        padding: 12px;
+        width: 90%;
+     }
+     /*--收货人信息*/
+     .foot-right{
+        width:45%;
+        height:350px;
+        float:right;
+        margin:10px  auto 0;
+     }
+     .consignee{
+        border: 1px solid #898989;
+        box-shadow: 7px 6px 6px #898989;
+        margin-left: 10px;
+        margin-top: 15px;
+        padding: 12px;
+        width: 90%;
+        overflow:hidden;
+     }
+     .foot-left ul li{
+        line-height:20px;
+    }
+    /*--返回按钮*/
+     .foot-under{
+        margin:10px  auto 0;
+        width:100%;
+        height:30px;
+        float:foot;
+     }
+     .body-back{
+        margin:20px  auto 0;
+        width:100%;
+        height:25px;
+     }
+     .backShopping{
+        margin-left:75px;
+        width:80px;
+        height:20px;
+        float:left;
+     }
+     .button-back{
+        width:20px;
+        float:right;
+        border: 0 none;
+        border-radius: 3px;
+        border:1px solid #b81c20;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        height: 25px;
+        line-height: 25px;
+        padding: 0 3px;
+        text-align: center;
+     }
+     .take-goods{
+        width:20px;
+        height:20px;
+        float:right;
+     }
+      /*--分页样式*/
+    .nowPage{
+        color:#000000;
+        font-size:15px;
+        font-weight:bold;
+    }
+    .pagination {
+        margin: 15px auto 0;
+        padding-bottom: 15px;
+        width: 450px;
+    }
+    .page a{
+        color: #656565;
+    }
+
+
+
+
+
+
+/***************************************************/
+/*******************收货地址*************************/
+/***************************************************/
+.div{ height:90px;}
+.main-content{
+    position: relative;
+   /* background: #fff none repeat scroll 0 0;*/
+    padding-bottom: 30px;
+    border: 0 none;
+    color: #333;
+    font: 400 12px/1.6 arial,sans-serif;
+    margin: 0 auto;
+    width:100%;
+}
+.h2-single{
+    /*background-color:white;*/
+    font-size:14px;
+    color:red;
+    height:40px;
+    line-height:40px;
+    margin:0;
+    padding:0;
+}
+.form-box{
+    position:relative;
+    width:45%;
+    padding:0;
+    color:#333;
+    font: 400 12px/1.6 arial,sans-serif;
+    float:left;
+}
+.form-box
+.item-title{
+    line-height:26px;
+}
+.form-box .item{
+   text-align:left
+   padding-bottom:10px;
+   padding-left:105px;
+   position:relative;
+   z-index:100;
+   padding-bottom:10px
+}
+.item-title{
+   line-height:26px;
+   padding-bottom:10px;
+   padding-left:105px;
+   position:relative;
+   z-index:100;
+   margin:0;
+   color:#333;
+}
+.item-label{
+    display:inline;
+    float:left;
+    height:26px;
+    line-height:26px;
+    margin-left:-105px;
+    text-align:right;
+    width:100px;
+}
+
+.form-box .item-title .item-label {
+    color: #fc6210;
+}
+.ts1{ margin-left:20px;}
+
+.form-box
+.item-label i{
+   color:red;
+   font-style:normal;
+}
+.ks-clear::before,
+.ks-clear::after{
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.ks-clear::after {
+    clear: both;
+}
+.ks-clear::before, .ks-clear::after {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+}
+.clearfix::after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+}
+.bf-select {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 12px;
+    outline: 0 none;
+    padding: 4px 8px;
+    position: relative;
+}
+.bf-select {
+    float: left;
+    margin-right: 10px;
+}
+.sSelect {
+    width: 72px;
+}
+
+element.style {
+    -moz-user-select: none;
+}
+.bf-select {
+    float: left;
+    margin-right: 10px;
+}
+.bf-select {
+    float: left;
+    margin-right: 10px;
+}
+.lSelect {
+    width: 282px;
+}
+.ks-combobox-input-wrap {
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+.form-box .i-ta {
+    border: 1px solid #afafaf;
+    display: block;
+    font-size: 12px;
+    height: 100px;
+    margin: 0;
+    padding: 3px;
+    width: 210px;
+}
+.form-box .disabled {
+    background: #f5f5f5 none repeat scroll 0 0;
+    overflow: auto;
+    vertical-align: top;
+    font-family: arial,宋体,sans-serif;
+}
+.form-box .item-warp {
+    display: inline-block;
+    position: relative;
+}
+.form-box .i-text {
+    border: 1px solid #afafaf;
+    height: 30px;
+    line-height: 18px;
+    padding: 3px;
+    vertical-align: middle;
+    width: 200px;
+}
+.form-box .item-set-default {
+    line-height: 26px;
+}
+.form-box .i-chk, .form-box label {
+    vertical-align: middle;
+    display:inline-block;
+      margin:1px 0 0;
+}
+
+.btnn {
+    background: #ff4001 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 20px;
+    text-align: center;
+}
+.btnn:hover{
+   background-color:red;
+   background-position: 0 -15px;
+   color: #333333;
+   text-decoration: none;
+   transition: background-position 0.1s linear 0s;
+}
+
+a{
+   color:#36c;
+   text-decration:none;
+}
+
+
+.hadAdd{color: #fc6210;}
+.userAddInfo { width:380px;height:90px;border:solid 1px #898989;box-shadow: 7px 6px 6px #898989;margin-top:15px;padding:12px;margin-left:20px}
+.userAddInfo li:nth-child(4) { font-size:12px;float:right;}
+.userAddInfo li input { vertical-align:text-bottom}

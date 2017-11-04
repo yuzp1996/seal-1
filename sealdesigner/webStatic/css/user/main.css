@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*************************************************/
+/*************公用部分导航和logo********************/
+/*************************************************/
+body,html{
+    width:100%;
+    height:99%;
+    min-width:1220px;
+    margin:0 auto;
+}
+/*页脚*/
+/*footer*/
+.footer {
+    border-top:0px solid #3e3a39;
+    line-height:25px;
+    text-align:center;
+    margin-top:50px;
+    margin-bottom:100px;
+    font-size:12px;
+}
+.footer a{color: black;}
+
+/******************************************************/
+/*********************登录注册公用样式**********************/
+/******************************************************/
+
+.centerArea{
+    /*background:url(/webStatic/img/Users/login/pugongying.jpg);*/
+    background-size: 100% 100%;
+    width:64%;
+    max-width:1220px;
+    min-height: 550px;
+    position: relative;
+/*
+    padding-top:105px;
+*/
+    margin-left:auto;
+    margin-right:auto;
+
+}
+.loginBox {
+    padding-top:10px;
+
+}
+
+input[type="text"], input[type="password"]{
+    height:28px;
+    width: 98%;
+}
+input[name="Input_verify"] {
+    width: 140px;
+}
+.login {
+    background-color: #f5f5f5;
+    opacity: 0.9;
+    height: 360px;
+    width: 410px;
+    position: absolute;
+    left:50%;
+    top:13%;
+}
+.bottomButt { 
+    margin-top: 9px; 
+}
+.bottomLabel {
+    margin-top: 5px; 
+}
+/*验证码样式*/
+#indexcode {
+    position: relative;
+    left: 15px;
+    top:-5px;
+}
+#imValidate { 
+    width:110px;
+    height:35px;
+}
+.loginFont {
+    color:#B81C20;
+    text-align:center;
+    font:bold;
+}
+input[type="button"]{
+    height: 50px;
+    width: 25%;
+    background-color: #f02323;
+    padding: .5em 2em .55em;
+    text-align:center;
+    font-size: 18px;
+    color: #FFF;
+    margin: 0 auto;
+}
+.lo-register {
+    font-size:15px;
+    margin-left:  110px;;
+}
+/******************************************************/
+/*********************注册界面样式**********************/
+/******************************************************/
+.register{
+/*    background-color: #f5f5f5;
+    opacity: 0.9;
+    height: 400px;
+    width: 410px;
+    position: relative;
+    left:50%;
+    top: 14%;*/
+
+    height: 400px;
+
+
+
+
+
+
+}
+.lo-login {  font-size:17px; }
+/*.userNamePromptLabel, .emailPromptLabel, .passWordPromptLabel, .passWordRepeatPromptLabel, .Input_verifyRepeatPromptLabel {
+    color:#BB0000;
+    visibility:hidden;
+    font-size: 12px;
+
+}*/
+
+/***************************************************/
+/*******************登录界面*************************/
+/***************************************************/
+#alertDiv {
+    width: 320px;
+    height:200px;
+    text-align: center;
+    padding-top: 10px;
+    left: 60%;
+    top:70%;
+}
+#alertDiv p {
+    margin-top:70px;
+}
+#loginSucceed { display: none }
+
+

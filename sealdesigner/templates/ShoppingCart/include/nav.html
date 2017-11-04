@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <!--<link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">-->
+</head>
+<body>
+<div class="nav-active">
+    <div class="headerBar">
+        <div class="comWidth">
+            <div class="leftArea">
+                <a href="#" class="collection" rel="sidebar" onclick="addFavorite()" style="color:white">收藏本站</a>
+            </div>
+            <div class="rightArea">
+                <a href="/Users/userLogin" style="color:#f5f5f5">[登录]</a><a href="/Users/userRegister" style="color:#f5f5f5">[注册]</a>
+            </div>
+
+        </div>
+    </div>
+    <!--侧边栏部分---->
+    <div class="sidebar">
+        <a href="../Users/personalCenter" style="color:#fff;">
+            <div class="bar" style="margin-top:67px;">
+                <div class="barLine">
+                    <i class="icon-user"></i>
+                    个人中心
+                </div>
+            </div>
+        </a>
+        <a href="../Users/trolley" style="color:#fff;">
+            <div class="bar">
+                <div class="barLine"style="margin-top:15px;">
+                        <i class="icon-shopping-cart"></i>
+                        购物车
+                </div>
+            </div>
+        </a>
+        <a href="../Users/myOrder" style="color:#fff;">
+            <div class="bar">
+                <div class="barLine">
+                    <i class="icon-th-list"></i>
+                    我的订单
+                </div>
+            </div>
+        </a>
+        <!--<a href="../chatroom/contactservice/" target="_blank" class="chatService" style="color:#fff;">-->
+       <!-- <a class="chatService" style="color:#fff;">
+            <div class="bar">
+                <div class="barLine">
+                    <i class="icon-comments"></i>
+                    联系客服
+                </div>
+            </div>
+        </a>-->
+        
+        <a id="top"  style="color:#fff;">
+            <div class="bar">
+                <div class="barLine">
+                    <i class="icon-circle-arrow-up"></i>
+                    返回顶部
+                </div>
+            </div>
+        </a>
+    </div>
+    <!--侧边栏部分结束-->
+    <div class="container_out">
+        <div class="container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img  class="logoImg" alt="网站logo" >
+                </a>
+            </div>
+            <!--<div class="nav-group">-->
+                <!--<div class="nav-item"><a href="/">首页</a></div>-->
+                <!--<div class="nav-item"><a href="/ShoppingCart/seallist">商品</a></div>-->
+                <!--<div class="nav-item"><a href="/ShoppingCart/aboutUs">关于我们</a></div>-->
+                <div class="searchBox" style="width:390px;height:30px;float:right;margin-top:40px;" id="searchBox">
+                     <div>
+                         <p><input type="text" value="" name="searchText" id="searchText" placeholder="输入商品名称" style=""/><button style="background-color:#B81C20;float:left;border:0;height:30px;width:80px; color:#FFF; line-height:30px;text-align:center;overflow:hidden;font-size:14px" id="searchButton">搜索</button></p>
+                     </div>
+                </div>
+            <!--</div>-->
+
+            <div class="bottomLabel" style="float:right;margin-top: 60px;display:none">
+                    <span style="color: brown;font-size: 18px;margin-right:1px;">已有账号</span><a class="lo-login" href="userLogin"><span style="color: coral; font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;">返回登录</span></a>
+            </div>
+
+        </div>
+    </div>
+    <div style="margin:0 auto;border-bottom: #B81C20 1px solid; overflow: hidden;" id="header">
+        <div class="headernav" style="height:30px;margin:0 auto">
+            <div style="width :80%;margin:0 auto;text-align: center;max-width:1200px;">
+                <ul style="margin-bottom: 0px;">
+                    <li id="header_index" onclick="javascript:location.href='/'">首页</li>
+                    <li id="header_seallist" onclick="javascript:location.href='/ShoppingCart/seallist'">商品</li>
+                    <!--<li id="header_trolley" onclick="javascript:location.href='/Users/trolley'">购物车</li>
+                    <li id="header_personalcenter" onclick="javascript:location.href='/Users/personalCenter'">个人中心</li>
+                    <li id="header_myorder" onclick="javascript:location.href='/Users/myOrder'">我的订单</li>-->
+                    <li id="header_aboutus" onclick="javascript:location.href='/ShoppingCart/aboutUs'">关于我们</li>
+                    <li id="header_modeldown" onclick="javascript:location.href='/ShoppingCart/modeldown'">委托书模板下载</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!--触发遮罩窗体-->
+<!--<div>-->
+            <!--<div id="bg"></div>-->
+            <!--<div class="box" style="display:none;">-->
+                <!--<h2>提示信息</h2>-->
+                <!--<div class="tip" id="deleteOneStudentTip" style="display:none;" >-->
+                    <!--<input type="hidden" id="actionid" value="" />-->
+                    <!--<input type="hidden" id="pictureid" value="" />-->
+                    <!--<input type="hidden" id="putplace" value="" />-->
+
+                    <!--<div class="Content" style="text-align:center;">-->
+                        <!--<div class="tipinfo">-->
+                            <!--<div style="text-align:center;">-->
+                                <!--<p style="font-size:16px;">&nbsp;是否确认删除该图片 ？</p><br>-->
+                                <!--<p style="">&nbsp;&nbsp;&nbsp;&nbsp;如果是请点击确定按钮 ，否则请点取消。</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<br>-->
+                        <!--<div class="tipbtn" style="text-align:center;">-->
+                            <!--<input name="" type="button"  class="sure" value="确定" />&nbsp;&nbsp;&nbsp;-->
+                            <!--<input name="" type="button"  class="cancel" value="取消" />-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+<!--触发遮罩窗体结束-->
+
+
+<div class="window" id="window" style="">
+		<div class="topTitle">请选择咨询类型</div>
+		<div class="list"></div>
+</div>
+<!--客服遮罩窗体-->
+<script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="webStatic/js/public/nav.js"></script>
+<script>
+    $(".chatService").click(function(e) {
+        c_start=document.cookie.indexOf("userId=");
+        if(c_start == -1){
+        alert('你还没有登录，请登录后再操作');
+        window.location.href='/Users/userLogin';
+        }
+        else{
+            $("#window").fadeIn(500,selectService());
+			e?e.stopPropagation():event.cancelBubble = true;
+        }
+
+	});
+	$("#window").click(function(e) {
+		e?e.stopPropagation():event.cancelBubble = true;
+	});
+	$(document).click(function() {
+		$("#window").fadeOut();
+	});
+	function selectService(){
+    $.post("/chatroom/selectService/",function(data){
+        var str="";
+        if(data=="[]"){
+
+            str+="<li>客服下线</li>"
+        }else{
+            var jsonData = $.parseJSON(data);
+            var j=1;
+
+            for(var i in jsonData){
+
+                str+="<li><a target='_blank' href='/chatroom/contactservice?serviceId="+jsonData[i]+"'>客服（"+j+" )</a></li>";
+                j=j+1;
+            }
+        }
+        $(".list").empty().append(str);
+    })
+}
+</script>
+</body>
+</html>

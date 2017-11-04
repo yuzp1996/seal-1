@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>提交订单</title>
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <!--<link rel="stylesheet" type="text/css" href="/webStatic/css/public/bootstrap/bootstrap.min.css">-->
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/public/main.css"/>
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/public/reset.css"/>
+    <link rel="stylesheet" href="/webStatic/css/shoppingcart/navPublic.css"/>
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/user/address.css"/>
+    <link rel="stylesheet" type="text/css" href="../webStatic/css/shoppingcart/submitOrder.css">
+
+</head>
+<body>
+<!--头部及导航部分-->
+    {% include "ShoppingCart/include/nav.html" %}
+<!--头部及导航部分结束-->
+
+<div class="module">
+    <input type="hidden" value="seallist" id="header_choose">
+        <!--<div style="width:80%;margin-left:10%;" id="barThi" class="barButt">-->
+            <!--<div class="position"  style="font-size:15px;color: rgb(112, 115, 134);margin-top:3px" >当前位置>提交订单</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 导航栏引入&ndash;&gt;-->
+        <!--{% include "ShoppingCart/include/bar.html" %}-->
+        <!--&lt;!&ndash; 导航栏结束&ndash;&gt;-->
+            <div style="position: relative;width:540px;height:30px;margin-left:10%;margin-top:30px;">
+            <img src="..\webStatic\img\ShoppingCart\index\bar_threeb.gif" width="540" height="30" alt="">
+            <span style="position: absolute;top:4px;left:42px;font-size:15px;color:#5A5A5A">1.选择章材</span>
+            <span style="position: absolute;top:4px;left:222px;font-size:15px;color:#5A5A5A">2.配置章材</span>
+            <span style="position: absolute;top:4px;left:408px;font-size:15px;color:white">3.提交订单</span>
+	    </div>
+        <div style="clear:both;"></div>
+    <div class="middle_body">
+        <hr>
+        <div class="addessInfor">
+            <span class="userInfor">收货人信息</span>
+            <a class="addButton"  href='#modal-container-666' data-toggle='modal'>[新增]</a>
+        </div>
+
+        <!--触发遮罩窗体-->
+        <div id="modal-container-666" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="height:auto;width:766px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size: 25px;">×</button>
+                <h4></h4>
+            </div>
+            <div class="form-box" style="width:100%;">
+                <div class="item item-title  newAddress">
+                    <span class="item-label">新增收货地址</span>
+                    <span class="ts1">电话号码、手机号选填一项，其余均为必填项</span>
+                </div>
+                <div class="item item-title changeAddress" style="display:none">
+                    <span class="item-label">修改</span>
+                    <span class="ts1">收货地址详情</span>
+                </div><div class="receiveAddId"></div>
+                <div>
+                    <div class="item ">
+                        <span class="item-label ">
+                            所在地区<i>*</i>
+                        </span>
+                        <div class="ks-clear clearfix">
+                            <select  id="province" style="width:109px;">
+                                <option value="0">请选择省份</option>
+                            </select>
+                            <select id="area" class="areaId" name="areaId" style="width:109px;">
+                                <option value="0">请选择地区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="item-label">
+                            详细地址<i>*</i>
+                        </span>
+                        <div class="ks-combobox-input-wrap">
+                            <textarea name="addInfor" class="ks-combobox-input i-ta tsl disabled addInfor " placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="item-label">
+                            收货人姓名<i>*</i>
+                        </span>
+                        <div class="item-warp">
+                            <input type="text"class="i-text addPeople"value="" name="addPeople" placeholder="长度不超过25个字符"/>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="item-label">
+                            电话/手机号码<i>*</i>
+                        </span>
+                        <div class="item-warp">
+                            <input type="text"class="i-text addPhone"name="addPhone" onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';} "/>
+                        </div>
+                    </div>
+                    <div class="item item-set-default">
+                        <input id="SetDefault" class="i-chk isDefault" type="checkbox" checked=true name="isDefault" value="0">
+                        <label for="SetDefault">设置为默认收货地址</label>
+                    </div>
+                    <div class="item">
+                        <input type="button" class="btnn" value="保存">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--触发遮罩窗体结束-->
+        <hr>
+        <div class="userAddress">
+            <!--数据库绑定数据-->
+        </div>
+        <div style="clear:both;"></div>
+        <hr>
+        <div>
+            <span class="payWay">支付及配送方式</span>
+        </div>
+        <hr>
+        <div class="shopping_Pay">
+            <span class="payMethod">支付方式:</span>
+            <select name="" id="select">
+                <!--数据库绑定数据-->
+            </select>
+            <!--<br>-->
+            <span class="payMethod" style="color: rgb(155, 155, 155);">配送方式:工作日、双休日与假日均可配送</span>
+        </div>
+        <hr>
+        <div>
+            <span class="coupon">优惠券</span>
+        </div>
+        <hr>
+        {% for privilege in privileges %}
+        <div class="shopping_Pay">
+            <span class="payMethod">
+                <input name="coupon_radio" value="{{ privilege.privilegeTypeId.privilegePrice}}" type="checkbox" id="{{ privilege.privilegeId }}" />{{ privilege.privilegeTypeId.privilegeName }}
+            </span>
+            <br>
+        </div>
+        {% empty %}<span class="payMethod" style="color: rgb(155, 155, 155);">暂无优惠券</span>
+        {% endfor %}
+        <hr>
+        <div>
+            <span class="payWay">商品清单</span>
+        </div>
+        <hr>
+        <center>
+            <div class="row-fluid">
+                <table style="width:100%;" >
+                    <tbody id="trolleyTable">
+                        <tr class="nth_tr">
+                            <th width="28%">商品</th>
+                            <th width="18%">单价(元)</th>
+                            <th width="18%">数量(个)</th>
+                            <th width="18%">库存状态(个)</th>
+                            <th width="18%">操作</th>
+                        </tr>
+                        {% for trolley in trollers %}
+                        <tr class="trolleyTr">
+                            <td>
+                                <div class="pic"><img src="{{ trolley.materialId.picture }}"></div>
+                                <div class="num">
+                                    <ul>
+                                        <li>{{ trolley.materialId.materialName }}</li>
+                                        <li><span>商品编号:</span><sapn></sapn></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="prise">{{ trolley.materialPrice }}</td>
+                            <td class="number-item">{{ trolley.number }}</td>
+                            <td>{{ trolley.status }}</td>
+                            <td>
+                                <a class="lookOrder" href="/ShoppingCart/trolleyInfoLoad?trolleyId={{ trolley.trollerId }}">查看</a>
+                                <input type="hidden" value="{{ trolley.trollerId }}" class="alter">
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </center>
+        <div class="invoicing">
+             <div class="invoicing_left">
+                 <div style="margin: 5% 0px 0px 5%;">
+                     <input type="checkbox" id="invoice_choice"/>开具发票
+                 </div>
+                 <div class="invoice">
+                     <p style="margin: 2% 0 0 30%;">
+                         <span class="invoice_dd1">发票抬头:</span>
+                         <input type="text"  class="invoice_choice_head">
+                     </p>
+                     <p style="margin:0 0 0 30%;">
+                         <span class="invoice_dd1">发票明细:</span>
+                         <select name="invoicing_select" class="invoicing_select" style="width:215px;height:34px;">
+                             <option value="印章">印章</option>
+                             <option value="印油">印油</option>
+                             <option value="印台">印台</option>
+                         </select>
+                     </p>
+                 </div>
+             </div>
+            <div class="invoicing_right">
+                <table>
+                    <tr>
+                        <td class="table_first"><span id="number" style="color: red;width: auto;">3</span>件商品总金额为:</td>
+                        <td class="table_second"><span>&yen;</span><span id="originalPrise"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="table_first">优惠金额:</td>
+                        <td class="table_second"><span>&yen;</span><sapn id="invoicePrise">0.00</sapn></td>
+                    </tr>
+                    <tr>
+                        <td class="table_first">应付金额:</td>
+                        <td class="table_second"><span>&yen;</span><sapn id="payPrice"></sapn></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        <hr>
+        <div>
+            <span  class="Message">留言</span>
+        </div>
+        <hr>
+        <div>
+            <textarea class="submitMessage"></textarea>
+            <div class="submitMessageButton">
+                <!--<span><a style="font-size:15px;" href="#">返回购物车修改</a></span>-->
+                <input type="button" value="完成订单" class="button" style="border: 0 none;border-radius: 3px;width: 110px;margin-top: -25px;margin-left: 15px;background-color:#B81C20">
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="foot"></div>
+        <!--投机取巧-->
+        <a href="" class="doubleClick"></a>
+    </div>
+</div>
+    <!--底部公用部分-->
+    {% include "ShoppingCart/include/footer.html" %}
+    <!--底部公用部分结束-->
+
+<script type="text/javascript" src="/webStatic/js/public/jQuery/jquery-1.7.2.min.js"></script>
+<script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+<script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+<script src="/webStatic/js/user/first/receiptAddress.js" type="text/javascript"></script>
+<script type="text/javascript" src="/webStatic/js/shoppingcart/submitOrder.js"></script>
+<script type="text/javascript" src="/webStatic/js/shoppingcart/public/bar.js" ></script>
+<script type="text/javascript" src="/webStatic/js/public/nav.js" ></script>
+<script>
+    var searchBox=document.getElementById("searchBox");
+    searchBox.style.display='none';
+
+</script>
+</body>
+</html>

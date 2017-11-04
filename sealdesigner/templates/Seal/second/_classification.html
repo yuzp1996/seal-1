@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加类别</title>
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap-multiselect.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/all.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+
+    <style>
+        .location{float:left;width:42%}
+        .stylePage{width:100%;height:35px;border:1px solid;text-align:center;line-height:35px}
+        .styleUrl {width:100%;border:1px solid}
+        .btn-group>.btn:first-child{margin:-40px 0 0 132px;width:220px;}
+    </style>
+</head>
+
+<!--引入公用部分-->
+    {% include "Seal/include/nav.html" %}
+<body >
+<!--中间部分开始-->
+   <div class="content">
+        <ul class="breadcrumb">
+        <li>商品管理<span class="divider"> >>> </span></li>
+        <li class="active">商品类别</li>
+        <li><span class="divider"> >>> </span>添加类别</li>
+        <li style="float:right"><a href="/Seal/classification">返回商品类别管理</a></li>
+    </ul>
+
+
+<div class="row-fluid" >
+            <div class="addClass" style="float:left">
+               <div>
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品类别名称：</b>
+                   <input class="className" id="className" type="text"  name="className"><br /><br />
+               </div>
+               <div>
+                   <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品类别父类：</b>
+                   <select class="sealClass"  name="sealClass" id="sealClass">
+
+                   </select><br /><br />
+               </div>
+               <div id="EnterpriseType" style="display:none;">
+                   <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;绑定企业类型：</b>
+                   <input type="hidden" id="str1" value="">
+                   <select class="lockClass"  name="lockClass" id="lockClass" multiple="multiple">
+
+
+                   </select>
+
+
+               </div>
+
+               <div id="format1">
+                   <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;板式 ：</b>
+
+                   <input type="checkbox"   id="chooseStyle" class="chooseStyle"  >&nbsp;&nbsp;选择版式<br /><br />
+
+               </div>
+
+               <div id="defaultf">
+                   <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认字体：</b>
+                   <select class="defaultFont"  name="defaultFont" id="defaultFont" >
+                   </select>
+                       <input type="checkbox" id="chooseFont" name="checkbox4" value="0"   style="margin-left:15px">&nbsp;用户可自行配置字体<br /><br />
+               </div>
+               <div id="isconfigfont" style="display:none;" >
+                   <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户配置字体：</b>
+                   <input type="hidden" id="str2" value="">
+                   <select class="configfont" id="configfont" multiple="multiple"></select>
+               </div>
+               <div>
+                   <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否启用：</b>
+                   <input type="radio" name="isShowRadio" checked style="margin-left:20px" value="1"/><b>启用</b><input type="radio" name="isShowRadio" style="margin-left:20px;" value="0"/><b>不启用</b>
+               </div><br />
+
+               <div>
+                   <input type="button" onclick="location.href='/Seal/classification'" id="cancel" class="btn" style="margin-left:250px " value="取消"/>
+                   <input type="button" id="buttonAdd" class="btn" style="margin-left:25px" value="添加"/>
+               </div>
+                </div>
+                <div class="styleCheck"  id="styleCheck"  style=" display:none;position: absolute;overflow:scroll;float:left;margin-left:650px;width:48%;height:400px"  >
+                    <div height="20px">
+                        选择板式：
+                        <a href="javascript:void(0);" onclick="b();"   style="margin-left:80%">返回</a>
+                        <br /><br />
+                        <input type="hidden" id="str3" value="">
+                    </div>
+
+
+                    <!--<div  >-->
+                        <!--<table>-->
+                            <!--<thead>-->
+                                <!--<tr >-->
+                                    <!--<th >板式</th>-->
+                                    <!--<th >板式</th>-->
+                                    <!--<th>板式</th>-->
+
+                                <!--</tr>-->
+                            <!--</thead>-->
+                            <!--<tbody  id="commodity" class="classlist">-->
+                                <!--<td>-->
+                                <!--<img width="80"  src="#" /><input name="checkbox" type="checkbox" style="margin-left:100px" value=""  />-->
+                                <!--</td>-->
+                            <!--<td>-->
+                                <!--<img width="80"  src="#" />-->
+                                <!--<input name="checkbox" type="checkbox" style="margin-left:100px" value=""  />-->
+                                <!--</td>-->
+                            <!--<td>-->
+                                <!--<img width="80"  src="#" />-->
+                                <!--<input name="checkbox" type="checkbox" style="margin-left:100px" value=""  />-->
+                                <!--</td>-->
+                            <!--</tbody>-->
+
+                        <!--</table>-->
+                    <!--</div>-->
+
+                    <!--<div class="location">-->
+                    <!--<div  class="stylePage" >-->
+                        <!--<p>板式</p>-->
+                    <!--</div>-->
+                    <!--<div  class="styleUrl" >-->
+                        <!--<img   src="#" />-->
+                        <!--<input name="checkbox" type="checkbox"  style="margin-left:140px;margin-top:-10px" value=""  />-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div  class="location" >-->
+                    <!--<div class="stylePage"  >-->
+                        <!--<p>板式</p>-->
+                    <!--</div>-->
+                    <!--<div class="styleUrl">-->
+                        <!--<img src="#" />-->
+                        <!--<input name="checkbox" type="checkbox" style="margin-left:140px;margin-top:-10px" value=""  />-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+
+            <div class="picturePage" id="picturePage" style="margin-left:30px">
+           </div>
+    </div>
+</div>
+       </div>
+<!--底部开始-->
+    <footer>
+        <hr>
+        <p>&copy; 2015 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部结束-->
+
+    <script src="/webStatic/js/public/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap-multiselect.js" type="text/javascript"></script>
+    <script src="/webStatic/js/admin/second/_classification.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+    <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+
+</body>
+</html>

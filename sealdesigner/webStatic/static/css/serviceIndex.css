@@ -1,0 +1,35 @@
+
+
+
+.chat-container{
+    height:500px;
+    border:1px solid;
+    margin-top:20px;
+}
+.contact-list{
+    height:500px;
+    border:1px solid crimson;
+}
+.contact-box{
+    height:500px;
+    border:1px solid aqua;
+}
+.chat-header{
+    background-color:#27c0d8;
+    height:25px;
+}
+.chat-content{
+    border:1px solid yellow;
+    height:400px;
+    overflow:auto;
+}
+.chat-msg-sendbox{
+    height:73px;
+   /* background-color:lightcyan;*/
+}
+.msg-box textarea{
+    height:72px;
+    width:100%;
+    resize:none;
+    border:none;
+}

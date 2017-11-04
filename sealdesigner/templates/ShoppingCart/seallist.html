@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>商品列表</title>
+	<link rel="stylesheet" type="text/css" href="/webStatic/css/public/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/public/main.css"/>
+	<link type="text/css" rel="stylesheet" href="/webStatic/css/public/reset.css"/>
+    <link rel="stylesheet" href="/webStatic/css/shoppingcart/navPublic.css"/>
+	<link rel="stylesheet" type="text/css" href="../webStatic/css/shoppingcart/seallist.css">
+</head>
+<body>
+<!--头部及导航部分-->
+    {% include "ShoppingCart/include/nav.html" %}
+<!--头部及导航部分结束-->
+<div class="module" style="min-width: 1300px;">
+	<input type="hidden" value="seallist" id="header_choose">
+	<input type="hidden"  id="materialsId" value={{materialsId}} >
+	<!--<div style="width:80%;margin-top:2%;margin-left:10%;" id="barFir" class="barButt">-->
+		<!--<div  style="font-size:14px;color: rgb(112, 115, 134);margin-top:3px" >当前位置>商品</div>-->
+	<!--</div>-->
+<!-- 导航栏引入-->
+	<!--{% include "ShoppingCart/include/bar.html" %}-->
+	<div style="position: relative;width:540px;height:30px;margin-left:10%;margin-top:30px;">
+		<img src="..\webStatic\img\ShoppingCart\index\bar_oneb.gif" width="540" height="30" alt="">
+		<span style="position: absolute;top:4px;left:42px;font-size:15px;color:white">1.选择章材</span>
+		<span style="position: absolute;top:4px;left:222px;font-size:15px;color:#5A5A5A">2.配置章材</span>
+		<span style="position: absolute;top:4px;left:408px;font-size:15px;color:#5A5A5A">3.提交订单</span>
+	</div>
+	<!--<div style="clear:both;"></div>-->
+<!-- 导航栏结束-->
+	<div style="margin-top: 3%;margin-bottom: 3%;">
+	<ul class="select">
+		<li class="select-list">
+			<dl id="top">
+				<dt class="top-left">商品筛选</dt>
+				<br>
+			</dl>
+		</li>
+		<li class="select-list" >
+			<dl id="select1">
+				<dt>商品分类：</dt>
+				<dd class='select-all selected' id='11'><a href='#' id="0">全部</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select2">
+
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select3">
+				<dt>材质分类：</dt>
+				<dd class='select-all selected'><a href='#' id="0">全部</a></dd>
+			</dl>
+		</li>
+		<li class="select-result">
+			<dl>
+				<dt>已选条件：</dt>
+				<dd class="select-no">暂时没有选择过滤条件</dd>
+			</dl>
+		</li>
+	</ul>
+	</div>
+	<div class="big_box" >
+	</div>
+	<div class="inner_clearfix">
+		<div id="pager" ></div>
+	</div>
+</div>
+
+    <!--底部公用部分-->
+    {% include "ShoppingCart/include/footer.html" %}
+    <!--底部公用部分结束-->
+
+<script type="text/javascript" src="/webStatic/js/public/jQuery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/webStatic/js/shoppingcart/seal_relation.js"></script>
+<script type="text/javascript" src="/webStatic/js/shoppingcart/public/bar.js" ></script>
+<script type="text/javascript" src="/webStatic/js/public/nav.js" ></script>
+</body>
+</html>

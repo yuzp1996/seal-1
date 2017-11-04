@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
+    <title>收货地址管理</title>
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/public/main.css" />
+    <link href="/webStatic/css/user/stylesheets/userDetails.css" rel="stylesheet" type="text/css" />
+    <link href="/webStatic/css/user/stylesheets/receiptAddress.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/user/address.css"/>
+</head>
+
+<body>
+    <!--引入公用部分-->
+    {% include "Users/include/nav.html" %}
+    <!--公共部分结束-->
+<div class="module">
+    <div class="location" style="color: rgb(112, 115, 134);">
+        <p>当前位置：<a href="/Users/personalCenter">个人中心</a>>>我的资料>>收货地址管理</p>
+    </div>
+    <div class="userDetailsBody" style="overflow:hidden;height:auto;padding-bottom:20px;">
+        <div class="backLocation"><a href="/">返回网站首页</a></div>
+        <hr style="margin-top:30px;border-bottom: 1px solid #B81C20;">
+        <div class="main-content">
+
+    <div class="form-box">
+        <div class="boxHead">
+            <span class="item-label">新增收货地址</span>
+        </div>
+        <div class="item item-title changeAddress" style="display:none">
+            <span class="item-label">修改</span>
+            <span class="ts1">收货地址详情</span>
+        </div><div class="receiveAddId"></div>
+        <div>
+            <div class="item ">
+                <span class="item-label "style="margin-top:12px;">
+                    所在地区
+                    <i>*</i>
+                </span>
+                <div class="ks-clear clearfix">
+                    <!--<div class="bf-select sSelect">-->
+                        <select  id="province" style="width:200px;margin-top:10px;">
+                            <option value="0">请选择省份</option>
+                        </select>
+                    <!--</div>-->
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <!--<div class="bf-select lSelect">-->
+                        <select id="area" class="areaId" name="areaId" style="width:200px;margin-top:10px;">
+                            <option value="0">请选择地区</option>
+                        </select>
+                    <!--</div>-->
+
+                </div>
+            </div>
+            <div class="item">
+                <span class="item-label">
+                    详细地址
+                    <i>*</i>
+                </span>
+                <div class="ks-combobox-input-wrap">
+                    <textarea name="addInfor" class="ks-combobox-input i-ta tsl disabled addInfor " placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息" style="width:90%;height:60px;"></textarea>
+                </div>
+            </div>
+            <div class="item">
+                <span class="item-label">
+                    收货人姓名
+                    <i>*</i>
+                </span>
+                <div class="item-warp">
+                    <input type="text"class="i-text addPeople"value="" name="addPeople" placeholder="长度不超过25个字符" style="width:300px;"/>
+                </div>
+            </div>
+            <div class="item">
+                <span class="item-label">
+                    电话/手机号码
+                    <i>*</i>
+                </span>
+                <div class="item-warp">
+                    <input type="text"class="i-text addPhone"name="addPhone" onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';} " style="width:300px;"/>
+                </div>
+            </div>
+            <div class="item item-set-default">
+                <input id="SetDefault" class="i-chk isDefault" type="checkbox" checked=true name="isDefault" value="0" style="margin-left:50px;">
+                <label for="SetDefault" >设置为默认收货地址</label>
+                <span class="ts1">电话号码、手机号选填一项，其余均为必填项</span>
+            </div>
+            <div class="item">
+                <input type="button" class="btnn" value="保存" style="margin-left:50px;">
+            </div>
+        </div>
+    </div>
+    <div class="address">
+        <div class="addressHead">
+            <span class="item-label">已有收货地址</span>
+        </div>
+    <div class="userAddInfoList">
+
+    </div>
+    </div>
+</div>
+    </div>
+</div>
+    <!--底部公用部分-->
+    {% include "ShoppingCart/include/footer.html" %}
+    <!--底部公用部分结束-->
+
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/webStatic/js/user/first/receiptAddress.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/pageJs.js" type="text/javascript"></script>
+    <!--page公用的js-->
+</body>
+</html>

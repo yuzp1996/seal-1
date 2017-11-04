@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*配置章材流程部分*/
+
+/*已选条件部分*/
+.selectedCondition{width:90%; height:40px; margin:40px auto 20px;border-top:1px solid #D2D2D2;border-bottom:1px solid #D2D2D2;}
+.selectedConditionList li{witdh:30px; height:25px; font-size:16px; margin: 8px 20px; float:left;   line-height: 25px;}
+.selected{font-weight:bold;}
+.item{
+    color:white;
+    background-color:#b81c20;
+    min-width: 100px;
+    text-align: center;
+}
+/*左侧商品显示部分*/
+.leftGoods{width:25%; height:300px;border:1px solid #D2D2D2; float:left;}
+.goods{width:200px; height:200px; margin:10px auto;}
+.goodsPicture{width:100%; height:100%;}
+.leftGoods p{width:60%;margin:10px auto;color:#656565;font-size:12px;}
+.leftGoods a{margin:5px 20px 0px 85px;}
+
+/*章材配置信息部分*/
+.sealInformation{width:72%; height:auto; margin:0px 0px 32px 20px;border:1px solid #D2D2D2; float:left;}
+.sealStyle{}
+
+.stylePicture{width:120px; height:133px; margin:20px 20px 20px 0;display:inline-block}
+.picture{width:100%; height:90%;}
+
+.sealInformation label {display:inline-block;width:100px;text-align:right;margin-right: 10px;}
+.remark { }
+.sealInformationList li { margin-left:15px;line-height:25px;}
+.sealInformation select{margin-left:-4px;}
+.effect {position: relative;left: 287px;top: -78px;}
+.generationEffect{
+    width:100px;
+    margin:16px 0px 0px 16px;
+    background: #b81c20 none repeat scroll 0 0;
+    color: #fff;
+    border: 0 none;
+    border-radius: 3px;
+    border:1px solid #b81c20;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 3px;
+    text-align: center;
+ }
+.sealPicture { width:120px;height:120px;margin: 0px 0 0 10px;display: inline-block;}
+input[type="text"] ,input[name="number"]{
+    width:150px;
+}
+li > select {
+    width:164px;
+}
+.companyProof ,.resharpenProof {
+    margin-left:7%;
+    color:red;
+}
+.companyProof >input[type="text"] ,.resharpenProof>input[type="text"],#userDataId { display: none;}
+.companyProof >li , .resharpenProof > li{ width:550px;line-height: 31px;}
+input[name='uploadButton'] {
+    float:right;
+    background: #b81c20 none repeat scroll 0 0;
+    color: #fff;
+    border: 0 none;
+    border-radius: 3px;
+    border:1px solid #b81c20;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 3px;
+    text-align: center;
+}
+.submitBtn {
+    margin:20px;
+    float:right;
+}
+.buyNow{
+    width:110px;
+    background: #b81c20 none repeat scroll 0 0;
+    color: #fff;
+    border: 0 none;
+    border-radius: 3px;
+    border:1px solid #b81c20;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 3px;
+    text-align: center;
+    margin-left: 60px;
+}
+.addCart{
+    width:110px;
+    background: #8c8b8b none repeat scroll 0 0;
+    color: #fff;
+    border: 0 none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 3px;
+    text-align: center;
+}
+.footer{display:block;margin-bottom:100px;float:left;width:100%;}
+/*
+.companyName{margin:20px;}
+.fl { display:block;}
+label { display:inline;}
+.remark{margin:0 20px 0 80px;display: inline;}
+.sealNumber{margin:20px 0px 20px 20px;}
+#number{height:25px; width:50px;}
+
+.color{margin:10px 20px 10px 45px;}
+.font{margin:20px 20px 10px 45px;}
+#fontSelect{height:30px; width:160px;}
+.quantity{margin:20px 20px 10px 50px;}
+.effect{margin:-100px 30px 10px -10px; float:right;}
+.previewEffect{margin:65px 35px 20px;}
+.sealPicture{width:100px; height:100px; margin:25px auto; float:left;}
+#sealPicture{width:100%; height:100%;}
+
+.companyType{margin:20px 18px 20px 20px;}
+#companyTypeSelect{height:30px; width:160px;}
+.sealStatement{margin:20px 20px 40px 20px;}
+.sharpen{margin-right:20px;}
+.resharpen{margin-right:20px;}
+.resharpenReason{margin:0 15px 0 90px;}
+#resharpenReasonSelect{height:30px; width:160px;}
+.showProof{margin:20px 20px 20px 20px;}
+.proof{margin-right:10px;}
+.upload{margin-right:20px;}
+.buyNow{width:100px; height:40px; margin:80px 30px 30px; float:right; border:1px solid blue; border-radius:10px;}
+.addCart{width:100px; height:40px; margin:80px 30px 30px 30px; float:right; border:1px solid blue; border-radius:10px;} */
+/*底部公用部分*/
+

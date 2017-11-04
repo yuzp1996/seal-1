@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>管理员登录</title>
+    <link href="/webStatic/css/public/bootstrap/font.css" rel="stylesheet" type="text/css">
+    <link href="/webStatic/css/public/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/webStatic/css/admin/adminLogin/loginCss.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<form id="userForm" class="_form" method = 'post' enctype="multipart/form-data" >
+    <div class="login_box" >
+        <div class="box_center">
+            <table>
+            <!--from 表单后台代码生产-->
+            {{uf.as_table}}
+                <!-- class="form-control yanzheng" -->
+                <tr><th><label>验证码：</label></th><td><input type="text" id="Input_verify" name="Input_verify"  placeholder="验证码"/></td><td><span id="indexcode" title="点击刷新"></span></td></tr>
+            </table>
+        <input type="submit" id="btnlogin" class="login_butt" value="登录" style="margin-left:40px;">
+        <input type="button" class="login_butt" value="首页" style="margin-left:50px;">
+        </div>
+    </div>
+</form>
+
+    <script type="text/javascript" src="/webStatic/js/public/jQuery/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/webStatic/js/public/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webStatic/js/admin/adminLogin/loginjs.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+/***
+ * uimaker
+ * http://www.uimaker.com
+ * e-mail: admin@uimaker.com
+ */
+a:hover{color:red;}
+a:link{text-decoration: none;}
+/*商品清单table开始*/
+.row-fluid {
+    width:90%;
+    margin:0 auto 0;
+
+    }
+.row-fluid table {
+    margin-top:10px;
+    text-align:center;
+    letter-spacing:2px;
+    border-collapse:collapse;
+    cursor:pointer;
+    font-size: 15px;
+    }
+.row-fluid table th {
+    height:30px;
+    text-align:center;
+    height: 30px;
+    }
+.row-fluid table th,td {
+    border:1px solid #C8C8CB;
+    }
+.row-fluid table td {
+    height:80px;
+    }
+.row-fluid table tr:hover {
+    background:#F6F6F6;
+    }
+.row-fluid img{
+    width: 90px;
+    height: 55px;
+    float: right;
+    margin: 10px 10px;
+    }
+.pic{
+    width: 45%;
+    float: left;
+    }
+.num{
+    text-align: left;
+    margin: 16px;
+    }
+/*商品清单table结束*/
+
+
+.middle_body{
+    width: 80%;
+    height:auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    }
+
+hr{
+    border: 1px dashed rgba(153, 149, 149, 0.37);
+    margin: 6px;
+    }
+
+.userInfor, .payWay, .Message, .coupon{
+    font-size: 16px;
+    margin: 0px 1% 0px 5%;
+    }
+
+.userAddInfo {
+    width: 29%;
+    height: 100px;
+    height:auto;
+    border: solid 1px #898989;
+    box-shadow: 7px 6px 6px #898989;
+    margin-top: 15px;
+    padding: 12px;
+    margin-left: 20px;
+    float: left;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    }
+
+.userAddInfo li:nth-child(4){
+    font-size:12px;
+    float:right;
+    }
+
+.userAddInfo li input {
+    vertical-align:text-bottom;
+    }
+.userAddress{
+    width:100%;
+    height:auto;
+    }
+
+
+.payMethod{
+    font-size:15px;
+    margin-left:10%;
+    }
+
+input[name='chooseAddress']{
+    margin-right:10px;
+    }
+
+input[name='coupon_radio']{
+    margin: 0px 8px 2px 0px;
+    }
+
+.shopping_Pay{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    }
+
+#select{
+    width: 84px;
+    height: 24px;
+    font-size: 14px;
+    }
+.invoicing dl{
+
+    }
+.invoicing_right{
+    width:50%;
+    float:left;
+    height: auto;
+    }
+.invoicing_left{
+    width:50%;
+    font-size: 15px;
+    float:left;
+    height: 140px;
+    }
+.invoicing_right td{
+    border: 0px solid #C8C8CB;
+    }
+.invoicing_right table{
+    float: right;margin: 5% 5%;
+    font-size: 15px;
+    }
+.table_first{
+    text-align:right;width:160px;
+    }
+.table_second{
+    width:100px;
+    padding-left: 25px;
+    color: red;
+    font-size: 14px;
+    }
+.submitMessage{
+    width: 90%;
+    height: 40px;
+    margin: 2% 0 0 7%;
+    float: left;
+    }
+.foot{
+    width:100%;
+    height:100px;
+    }
+.submitMessageButton{
+    float: right;
+    width: auto;
+    margin: 6% 8% 0 0;
+    }
+.button{
+    border-radius: 5%;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    color: aliceblue;
+    background-color: rgb(102, 204, 255);
+    }
+#select{
+    height: 35px;
+    width: 120px;
+    font-size: 15px;
+    }
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0.6;
+    }
+.invoice_dd1{
+    width:auto;
+    float:left;
+    font-size:15px;
+    margin-top: 8px;
+    }
+.invoice_choice_head{
+    width:200px;height:25px;
+    }
+#invoice_choice{
+    margin: -1% 0px 0px 20%;
+    }
+.addButton{
+    font-size: 16px;
+    color: red;
+    }
+/**********************************/
+.userAddress th{
+    height:30px;
+}
+.userAddress td{
+    border-style:none;
+    width:300px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>配置章材</title>
+	<link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <!--<link rel="stylesheet" type="text/css" href="/webStatic/css/public/bootstrap/bootstrap.min.css">-->
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/public/main.css"/>
+	<link type="text/css" rel="stylesheet" href="/webStatic/css/public/reset.css"/>
+    <link rel="stylesheet" href="/webStatic/css/shoppingcart/navPublic.css"/>
+	<link rel="stylesheet" href="/webStatic/css/shoppingcart/configureSeal.css"/>
+	<link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/picshow.css">
+	<style>
+		input[name='searchText'] {width:266px;height:25px;}
+	</style>
+
+</head>
+<body>
+    <main style="width:100%">
+        <!--头部及导航部分-->
+        {% include "ShoppingCart/include/nav.html" %}
+        <!--头部及导航部分结束-->
+	<div class="module" style="width:100%;margin:0 auto;">
+		<input type="hidden" value="seallist" id="header_choose">
+	    <!--配置章材流程部分--->
+		<input type="hidden" id="goodsName" value="{{ sealId }}"/>   <!--隐藏域，用于接收上一页面传过来的id-->
+		<div style="position: relative;width:540px;height:30px;margin-left:10%;margin-top:30px;">
+			<img src="..\webStatic\img\ShoppingCart\index\bar_twob.gif" width="540" height="30" alt="">
+			<span style="position: absolute;top:4px;left:42px;font-size:15px;color:#5A5A5A">1.选择章材</span>
+			<span style="position: absolute;top:4px;left:222px;font-size:15px;color:white">2.配置章材</span>
+			<span style="position: absolute;top:3px;left:408px;font-size:15px;color:#5A5A5A">3.提交订单</span>
+		</div>
+	    <!--配置章材流程部分结束-->
+        <!--已选条件部分-->
+        <div style="width:90%;margin:0 auto">
+            <div class="selectedCondition">
+                <ul class="selectedConditionList">
+                    <li class="selected">已选条件:</li>
+                </ul>
+            </div>
+        </div>
+        <!--已选条件部分结束-->
+        <!--左侧商品显示部分-->
+        <div style="width:80%;margin:0 auto;">
+            <div class="leftGoods">
+                <div class="goods">
+                    <!--<img src="" alt="" class="goodsPicture" />-->
+                </div>
+                <!--<p>光敏印章成像极清晰，无需印泥，即印即干</p>-->
+                <a href="">查看更多详情</a>
+                <!--<input type="checkbox" value="" />添加到购物车-->
+            </div>
+
+            <!--左侧商品显示部分结束-->
+            <!--章材配置信息部分-->
+            <div class="sealInformation">
+                <form id="seal_form" method="post" enctype="multipart/form-data">
+
+                    <ul class="sealInformationList">
+                        <li class="sealStyleList">
+                            <label class=" sealStyle">章材样式:</label>
+                        </li>
+                            <ul class="formatInformation"></ul>
+                        <li style="clear:left;">
+                            <label class="color">颜色:</label>
+                            <select name="colorSelect" id="colorSelect">
+                            </select>
+                        </li>
+                        <li>
+                            <label class="font">字体:</label>
+                            <select name="fontSelect" id="fontSelect">
+                            </select>
+                        </li>
+                        <li class="effect" style="height:120px;">
+                            <div style="display:none;">
+                                <label class="leftLabel previewEffect" style="width:45px;">预览:</label>
+                                <img alt='' class='sealPicture' src="" />
+                                <input type="button" class="generationEffect" id="generationEffect" value="生成效果" />
+                                <input type="text" class="stylePic hidden" />   <!--id为生成效果图片的id,value为生成效果图片的url-->
+                            </div>
+
+
+                        </li>
+                        <li class="" style="margin-top: -110px;">
+                            <label class="companyType">企业类型:</label>
+                            <select name="companyId" id="companyTypeSelect">
+                                <option value="0">请选择</option>
+                            </select>
+                        </li>
+                        <li class="selectBecause">
+                            <label class="sealStatement">刻章声明:</label>
+                            <input type="radio" name="shrpenSeal" id="shrpen" value="" checked="checked" /><span class="sharpen">初刻</span>&nbsp;&nbsp;
+                            <input type="radio" name="shrpenSeal" id="resharpen" value="" /><span class="resharpen">二次刻章</span>
+                            <label class="resharpenReason">原因:</label>
+                            <select name="statementId" id="resharpenReasonSelect">
+                                <option value='0'>请选择</option>
+                            </select>
+                        </li>
+                        <li class="StatementList">
+                            <label class="showProof">出示证明:</label>
+                                <ul class="companyProof"></ul>    <!--企业声明-->
+                                <ul class="resharpenProof"></ul>     <!--重刻声明-->
+                        </li>
+                        <li>
+                            <label class="quantity">数量:</label>
+                            <!--html5数字输入控件-->
+                             <input type="number" name="number" id="number"
+                            min="1" max="100" step="1" value="1">
+                        </li>
+                    </ul>
+                    <input type="text" class="hidden" name="userDataId" value="" id="userDataId">
+                </form>
+                <div class="submitBtn">
+                    <input type="button" class="addCart" style="width:110px;" id="addCart" value="加入购物车" />
+                    <input type="button" class="buyNow" style="width:110px;" id="buyNow" value="立即购买" />
+                </div>
+            </div>
+            <!--章材配置信息部分结束-->
+            <div >
+                <div id="bg" style="position:absolute;"></div>
+                <div class="box" id="box" style="display:none;">
+                <div style="height:41px;width:328px;background-color: rgb(185, 185, 185);border: 1px solid rgb(180, 180, 180);">
+                    <p style="font-weight:bold;line-hight:2px;line-height:40px;font-family:宋体;font-size:18px;color:white;">提示:</p>
+                </div>
+                <p style="margin-top:50px;text-align:center;font-weight:bold;font-size: large;">加入购物车成功！</p>
+                <a href="javascript:history.go(-1)" role="button" class="btn" style="margin-left:30px; margin-right:40px;margin-top:50px;background: rgb(185, 185, 185) none repeat scroll 0% 0%;">返回商品列表</a>
+                <a href="/Users/trolley" role="button" class="btn" style="margin-top:50px;background: rgb(245, 46, 28) none repeat scroll 0% 0%;width: 110px;color: aliceblue;"> 进入购物车</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!--底部公用部分-->
+    {% include "ShoppingCart/include/footer.html" %}
+    <!--底部公用部分结束-->
+
+
+</body>
+<script type="text/javascript" src="/webStatic/js/public/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="/webStatic/js/public/bootstrap/bootstrap.js"></script>
+<script type="text/javascript" src="/webStatic/js/shoppingcart/configureSeal.js"></script>
+<script type="text/javascript" src="/webStatic/js/shoppingcart/public/bar.js" ></script>
+<script type="text/javascript" src="/webStatic/js/public/nav.js" ></script>
+<script src="/webStatic/public/jquery.form.js" type="text/javascript"></script>        <!--引入表单提交包文件-->
+</html>

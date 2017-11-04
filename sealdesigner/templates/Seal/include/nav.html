@@ -1,0 +1,82 @@
+<html>
+<body>
+<!-- 头部导航-->
+<div class="navbar">
+    <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li id="fat-menu" class="dropdown">
+                    <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user"></i> <span id="adminName"></span>
+                        <li><a tabindex="-1" href="logout">安全退出</a></li>
+                    </a>
+                </li>
+            </ul>
+            <a class="brand" href="adminindex" style="color:#FFFFFF;">管理中心首页 </a>
+    </div>
+</div>
+<!--头部导航结束-->
+
+
+<!-- 左侧导航列表-->
+<div class="sidebar-nav">
+    <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-user"></i>客户数据</a>
+    <ul id="dashboard-menu" class="nav nav-list collapse">
+        <li><a href="/Seal/adminindex">客户列表</a></li>
+        <li ><a href="/Seal/citylist">地区列表</a></li>
+    </ul>
+
+    <a href="#basedData-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>基础数据管理</a>
+    <ul id="basedData-menu" class="nav nav-list collapse">
+        <li><a href="/Seal/fontAndColor">字体和颜色配置</a></li>
+        <li ><a href="/Seal/formatEdit">印章板式配置</a></li>
+        <li ><a href="/Seal/EterpriseType">企业类型管理</a></li>
+        <li ><a href="/Seal/Sealstatement">非首次刻章声明</a></li>
+    </ul>
+
+    <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>商品管理</a>
+    <ul id="accounts-menu" class="nav nav-list collapse">
+        <li ><a href="/Seal/data">商品管理</a></li>
+        <li ><a href="/Seal/classification">商品类别</a></li>
+         <li ><a href="/Seal/package">套餐管理</a></li>
+        <li ><a href="/Seal/stuffAdmin">材质管理</a></li>
+    </ul>
+
+    <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>订单管理</a>
+    <ul id="legal-menu" class="nav nav-list collapse">
+        <li ><a href="/Seal/order">订单管理</a></li>
+    </ul>
+
+    <a href="#coupon-menu" class="nav-header" data-toggle="collapse"><i class="icon-gift"></i>促销管理</a>
+    <ul id="coupon-menu" class="nav nav-list collapse">
+        <li ><a href="/Seal/coupon?pageNum=1">优惠券管理</a></li>
+    </ul>
+
+    <a href="#admin-menu" class="nav-header" data-toggle="collapse"><i class="icon-wrench"></i>系统管理</a>
+    <ul id="admin-menu" class="nav nav-list collapse">
+        <li ><a href="/Seal/newsLists">新闻管理</a></li>
+        <li ><a href="/Seal/announcement">公告管理</a></li>
+        <li ><a href="/Seal/pictureShow">首页图片管理</a></li>
+        <li ><a href="/Seal/manager">管理员管理</a></li>
+        <li ><a href="/Seal/managerclass">管理员类别管理</a></li>
+    </ul>
+    <a href="#logo-menu" class="nav-header" data-toggle="collapse"><i class="icon-truck"></i>安全管理</a>
+    <ul id="logo-menu" class="nav nav-list collapse">
+        <li ><a href="/Seal/log" id="11">日志管理</a></li>
+    </ul>
+    <a href="#chat-room" class="nav-header" data-toggle="collapse"><i class="icon-user"></i>客服聊天</a>
+    <ul id="chat-room" class="nav nav-list collapse">
+        <li ><a href="/chatroom/index" target="_blank">客服聊天</a></li>
+    </ul>
+
+
+    <div id="jplayer"></div>
+
+
+</div>
+<!-- 左侧导航列表结束-->
+  <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+  <script src="/webStatic/js/admin/first/news.js" type="text/javascript"></script>
+<!--</script>-->
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>板式配置</title>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+        <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/all.css">
+        <style>
+            .row-fluid table th, td {
+                height:auto;
+            }
+        </style>
+
+    </head>
+<!--[if lt IE 6 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+    <body class="">
+      <!--<![endif]-->
+        <!-- 头部导航-->
+        <!--引入公用部分-->
+        {% include "Seal/include/nav.html" %}
+
+    <!--中间部分-->
+        <div class="content">
+            <!--商品基础数据-->
+            <ul class="breadcrumb">
+                <li>基础数据管理<span class="divider"> >>> </span></li>
+                <li class="active">印章板式配置</li>
+            </ul>
+            <!--添加板式-->
+            <div class="header">
+                <div class="add">
+                <a href="#modal-container-183169" id="btnA" class="btn" data-toggle='modal' style="margin-bottom:10px"><i class="icon-plus"></i> 添加板式</a>
+                </div>
+            </div>
+            <div class="row-fluid" width="100%" style="min-height:280px;">
+                <table>
+                    <thead>
+                            <th width="25%">板式</th>
+                            <th width="25%">配置信息</th>
+                            <th width="25%">是否启用</th>
+                            <th width="25%">编辑</th>
+                    </thead>
+                    <tbody class="format">
+                        <!--<tr>-->
+                            <!--<td rowspan="7"><img src="#" style="max-width:80px;min-width:50px; height:60px; border:1px solid #777;" /></td>-->
+                            <!--<td border="0" ></td>-->
+                            <!--<td rowspan="7">是</td>-->
+                            <!--<td rowspan="7"><a href="return false;"><i class="icon-remove" title="删除"></i>删除</a>&nbsp;&nbsp;<a href="return false;"><i class="icon-edit" title="修改"></i>修改</a>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr><td>单位名称</td></tr>-->
+                        <!--<tr><td>印章编号</td></tr>-->
+                        <!--<tr><td>单位名称</td></tr>-->
+                        <!--<tr><td>印章编号</td></tr>-->
+                        <!--<tr><td>单位名称</td></tr>-->
+                        <!--<tr><td>印章编号</td></tr>-->
+                    </tbody>
+                </table>
+            </div>
+
+            <!--分页-->
+            <div class="pagination" style="width:300px;margin:0 auto 0; margin-top:15px; text-align:center">
+                <ul class="page">
+                <!--数据库调取分页-->
+                </ul>
+            </div>
+        </div>
+        <!--中间部分结束-->
+        <!--  触发遮罩窗体-->
+        <!--添加板式-->
+            <div id="modal-container-183169" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="max-height:550px; height:auto;width:600px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 >
+                        添加板式:
+                    </h3>
+                </div>
+                <br />
+                <form id="pictureForm" class="formstyle" method="post" enctype="multipart/form-data" action="/formatSave/">
+                        <input type="button" class="uploadFormat" value="上传板式" style="width:150px;height:50px; border-radius:10px;border:2px solid blue; opacity:0.5; margin:0px 5px -150px 30px;" /><br />
+                        <div class="picture" style="height:200px; width:200px; float:right;margin:-20px 100px 30px;">
+                            <img class="imageArea" src="#" alt="" style="height:200px;width:200px;" />
+                        </div>
+                        <b style="width:100px; height:20px; margin-top:180px; display:block;">印章配置信息:</b>
+                        <input type="button" value="+" class="formatInformationAdd" style="margin:-60px 100px 0px;width:35px;height:30px;font-size:25px;">
+                        <input type="hidden" id="pictureId" name="pictureId" value="" />
+                        <input type="hidden" id="picUrl" name="picUrl" value="{{picUrl}}"/>
+                        <input id="pictureFile" class="hidden" type="file" name="formatPictureUrl">
+                        <div class="sealFormatInformation" style="margin:-70px 10px 10px 300px; display:block;">
+                        <!--<tr class="sealFormatInformation">-->
+                            <!--<td style="border:0;">-->
+                                <input type="button" value="删除板式" name="formatInformationSub" class="btnControl" style="width:100px; height:30px; margin-left:10px; font-size:15px;" />
+                                <input type="hidden" id="formatId" value="" />     <!--隐藏域-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        </div>
+                            <table class="formatTable" style="">
+                                <tr  class="formatInformation"><!--用于重载后面添加进来的tr-->
+                                </tr>
+                                <tr class="formatInformationFirst">
+                                    <th>配置信息:</th>
+                                    <td style="border:0;"><input type="text" class="informationList" style="margin-left:10px;width:150px;margin-top:5px;" /></td>
+                                    <td style="border:0;">&nbsp;&nbsp;&nbsp;&nbsp;备注:</td>
+                                    <td style="border:0;"><input type="text" class="informationListRemark" style="margin-left:10px;width:150px;margin-top:5px;" /></td>
+                                    <td style="border:0;"><input type="button" value="-" id="btnSub" name="btnSub" style="width:35px; margin-left:10px; font-size:30px;" /></td>
+                                </tr><br />
+                                <tr>
+                                    <th>是否启用:</th>
+                                    <td style="border:none;"><input type="radio" value="1" name="isShowRadio" style="margin-left:15px; display:inline"><b style="display:inline">是</b><input type="radio" value="0" name="isShowRadio" style="margin-left:30px"><b style="display:inline">否</b></td>
+                                </tr>
+                            </table>
+                        <div class="informationAndMemo"></div>
+                        <br />
+                </form>
+            <div class="modal-footer" >
+                 <button id="btnCancel" class="btn" data-dismiss="modal" aria-hidden="true">取消</button><input type="button" class="btn btn-primary btn-add" id="btnAdd" value="添加" />
+            </div>
+      </div>
+
+    <!--底部开始-->
+      <footer>
+          <hr>
+          <p>&copy; 2015 <b>华北理工大学智慧软件应用研发工作室</b></p>
+      </footer>
+    <!--底部结束-->
+
+        <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+        <script src="/webStatic/js/admin/first/formatEdit.js"></script>
+        <script src="/webStatic/js/public/pageJs.js" type="text/javascript"></script>
+        <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+        <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+        <script src="/webStatic/public/jquery.form.js" type="text/javascript"></script>
+        <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+    </body>
+</html>

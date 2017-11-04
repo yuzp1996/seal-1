@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>订单详情界面</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+    <link rel="stylesheet" href="/webStatic/css/admin/stylesheets/all.css">
+
+
+      <style>
+        .orderStyle{height:200%;width:50%; border:1px solid #777;}
+        .orderStyle:hover{ width:75%; height:300%;}
+      </style>
+
+  </head>
+
+
+  <body>
+
+    <!--引入公用部分-->
+    {% include "Seal/include/nav.html" %}
+    <!--中间部分-->
+
+    <div class="content">
+        <!--订单详情界面-->
+        <input type="hidden" id="stopJs" value="stop">
+        <ul class="breadcrumb">
+            <li>订单管理<span class="divider"> >>> </span></li>
+            <li class="active">订单管理</li>
+            <li> <span class="divider"> >>> </span>订单详情界面</li>
+            <li style="float:right"><a href="order">返回订单列表</a>
+        </ul>
+        <div class="row-fluid">
+        <!--商品详情-->
+
+        <div class="order" style="height:auto;width:auto">
+            <!--绑定商品信息-->
+        </div><br/><br />
+
+        <div class="consignee" style="clear:both">
+            <br /><br />
+            <!--收货人信息-->
+            <div class="leftConsignee" >
+                <h5 class="receiver">收货人信息：</h5>
+                <form id="consigneeInformation" action="">
+                        <table style="width:90%">
+                    <thead>
+                        <tr>
+                            <th >收货人</th>
+                            <th>所在地区</th>
+                            <th>详细地址</th>
+                            <th >联系电话</th>
+                        </tr>
+                    </thead>
+                    <tbody class="listpeople">
+                    <!--从数据库绑定数据-->
+                    </tbody>
+                </table>
+                </form>
+            </div>
+            <!--<div class="isIvoice"  >-->
+                <!--<div style="float:left"> <input type="radio" class="receiptCheckbox" id="receiptCheckbox" checked="checked" />开发票:</div>-->
+                <!--<div style="float:left">-->
+                <!--<ul class="receipt" style="margin-left:10px">-->
+                            <!--<li>发票抬头:<span>华北理工大学</span></li><br />-->
+                            <!--<li>发票明细:<span>明细</span></li><br />-->
+                        <!--</ul>-->
+                    <!--</div>-->
+            <!--</div>-->
+             <!--订单信息-->
+            <div class="rightConsignee" >
+                <br />
+                <h5 class="receiver">订单信息：</h5>
+                <form id="total" action="">
+                        <!--<ul class="listDetailOrder">-->
+
+                        <!--</ul>-->
+
+                    <table style="width:90%">
+                    <thead>
+                        <tr>
+                            <th >下单日期</th>
+                            <th >处理日期</th>
+                            <th >使用优惠券</th>
+                            <th >付款总额</th>
+                            <th>付款方式</th>
+                            <th>备注</th>
+                            <th>开具发票</th>
+                            <th class="invoiceHead">发票抬头</th>
+                            <!--<th class="invoiceDetail">发票明细</th>-->
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr class="listDetailOrder"></tr>
+                            <!--后台调取数据-->
+                    </tbody>
+                </table>
+
+                </form>
+            </div>
+    </div><br /><br />
+
+
+            <div>
+            <b>当前订单状态：</b>
+
+            <!--订单处理类型-->
+        <select class="statusSelect" style="margin-top:10px;width:120px;color:red" disabled="disabled">
+            <option value="-2">无效订单</option>
+            <option value="-1">打回修改</option>
+            <option value="0">用户删除</option>
+            <option value="1">未处理</option>
+            <option value="2">审核中</option>
+            <option value="3">交付制作</option>
+            <option value="4">已发货</option>
+            <option value="5">已收货</option>
+            <option value="6">系统取消订单</option>
+            <option value="7">用户取消订单</option>
+            <option value="8">交易完成</option>
+            <option value="9">等待退款</option>
+            <option value="10">退款中</option>
+            <option value="11">退款成功</option>
+
+                </select>
+                <br />
+                 </div>
+            <div class="status" style="margin-left:33px">
+            <form id="statusInformation" action="">
+                   <ul class="list2">
+                            <li>物流单号:<span><input type="text" class="logistics" style="margin-left:10px"/></span></li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;发货人:<span><input type="text" class="express" style="margin-left:10px"/></span></li>
+                        </ul>
+            </form>
+        </div>
+
+
+            <!--管理员备注-->
+            <div style="clear:both;margin-top:10px" class="response">
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;管理员备注：<span><textarea name="adminRemark" class="adminRemark" style="width:50%;height:80px;" ></textarea></span></h5>
+             </div>
+            <br /><br />
+            <div style="margin-left:50%" >
+                    <input type="button" id="-1"  class="btn" value="打回修改" style="margin-left:10px;display:none" >
+                    <input type="button" id="0"  class="btn" value="用户删除" style="margin-left:10px;display:none" >
+                    <input type="button" id="1"  class="btn" value="待处理" style="margin-left:10px;display:none" >
+                    <input type="button" id="2"  class="btn" value="审核" style="margin-left:10px;display:none" >
+                    <input type="button" id="3"  class="btn" value="交付制作" style="margin-left:10px;display:none" >
+                    <input type="button" id="4" name="0" class="btn" value="准备发货" style="margin-left:10px;display:none" >
+                    <input type="button" id="5"  class="btn" value="已收货" style="margin-left:10px;display:none" >
+                    <input type="button" id="6" value="取消订单" class="btn" style="margin-left:10px">
+                    <input type="button" id="10" value="同意退款" class="btn" style="margin-left:10px;display:none">
+                    <input type="button" id="11" name="1" class="btn aa" value="退款" style="margin-left:10px;display:none" >
+                    <input type="button" id="back" class="btn" value="返回" style="margin-left:10px" >
+                </div>
+    </div>
+        </div>
+    <div id="link"></div>
+    <!--中间部分结束-->
+    <!--底部开始-->
+    <footer>
+        <hr>
+        <p>&copy; 2015 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部开始-->
+
+  <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+  <script src="/webStatic/js/admin/second/_order.js"></script>
+  <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+  <script src="/webStatic/js/public/pageJs.js"></script>
+  <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+  <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/webStatic/css/user/main.css" />
+    <link rel="stylesheet" href="/webStatic/css/shoppingcart/navPublic.css"/>
+        <style>
+
+   .userNamePromptLabel, .emailPromptLabel, .passWordPromptLabel, .passWordRepeatPromptLabel, .Input_verifyRepeatPromptLabel {
+        color:#BB0000;
+        visibility:hidden;
+        font-size: 12px;
+
+    }
+    </style>
+</head>
+<body>
+<!--头部及导航部分-->
+    {% include "ShoppingCart/include/nav.html" %}
+<!--头部及导航部分结束-->
+<div style="margin: 0 auto;display: block;margin-top: -80px;width:47%;">
+    <span style="font-size: 18px;color: coral;">欢迎注册</span>
+    <span style="font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;color: brown;">印递安</span>
+</div>
+<hr style="height:1px;border:none;border-top:1px dashed #EF2F18;clear:both;" />
+<div class="centerArea" style="height:600px;">
+    <div class="register">
+        <center class="loginBox">
+            <h1 class="loginFont">注 册</h1>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <input class="form-control userName" Type=text Name="userName" Value="" placeholder="请填写登录名" style="height:40px;width:400px">
+                        <br>
+                        <i class="userNamePromptLabel">2~20，允许中文输入,建议输入真实姓名！</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control passWord" Type=Password Name="passWord"  Value="" placeholder="请输入6~16位密码" style="height:40px;width:400px">
+                        <br>
+
+                        <i class="passWordPromptLabel">6~16，密码只能包含_，英文字母，数字！</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control passWordRepeat"  Type=Password Name="passWordRepeat"  Value="" placeholder="请确认密码" style="height:40px;width:400px">
+                        <br>
+                        <i class="passWordRepeatPromptLabel">请填写与上一栏相同的密码，进行确认！</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control email" Type=text Name="email" Value="" placeholder="请填写常用邮箱" style="height:40px;width:400px;" >
+                        <br>
+                        <i class="emailPromptLabel">请输入常用邮箱，可用于找回密码</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="verify" class="form-control Input_verify" name="Input_verify" placeholder="验证码" style="height:40px;width:36%;float:left;"/>
+                        <span id="indexcode" title="点击刷新" >
+                            <form action="" method="post" name="myform" style="width:65%;float:left;    margin-left: -20px;">
+                                <input type="button" name="toGetCode" value="获取邮箱验证码" onclick="showtime(60)" style="padding: 0 0 0 0;width: 100%;height: 50px;background: #e6dada;color: #f05a5a;border: aliceblue;">
+                            </form>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <div class="bottomButt" >
+                <input Type="button" class="btn button btn-info submitInfo" Value="注册" style="height:40px;width:415px" />
+<!--                <div class="bottomLabel">
+                    <a class="lo-login" href="userLogin">已有账号返回登录</a>
+                </div>-->
+            </div>
+        </center>
+    </div>
+</div>
+<!--底部公用部分-->
+    <!--<div class="footer">-->
+        <!--<p>Copyright 2007 - 2016 vancl.com All Rights Reserved 京ICP证100557号 京公网安备11011502002400号 出版物经营许可证新出发京批字第直110138号</p>-->
+        <!--<p>创业印章有限公司</p>-->
+    <!--</div>-->
+<!--底部公用部分结束-->
+<!--底部公用部分-->
+    {% include "ShoppingCart/include/footer.html" %}
+<!--底部公用部分结束-->
+<script src="/webStatic/js/public/jQuery/jQuery.js"></script>
+<script src="/webStatic/js/public/bootstrap/bootstrap.min.js"></script>
+<script src="/webStatic/public/sha256.min.js"></script>
+<script src="/webStatic/public/jquery-2.0.3.min.js"></script>
+<script src="/webStatic/js/user/userRegister.js"></script>
+
+<script>
+    <!--$(function(){-->
+        <!--$(".centerArea").css({-->
+            <!--"height":$("body").height()-$(".nav-active").height()-$(".footer").height()-$(".footer").height()/5,-->
+        <!--})-->
+    <!--})-->
+    var head=document.getElementById("header");
+    var searchBox=document.getElementById("searchBox");
+    head.style.borderBottom='#B81C20 0px solid';
+    searchBox.style.display='none';
+    $(".bottomLabel").css("display","block");
+    $("#header_index,#header_seallist,#header_aboutus,#header_modeldown,.sidebar").css("display","none");
+
+</script>
+</body>
+</html>

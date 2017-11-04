@@ -1,0 +1,32 @@
+﻿
+    
+2017/02/18 10:23:01	view:_coupon
+error:[User matching query does not exist.]
+doc:
+    优惠券匹配用户界面
+    
+2017/10/26 16:29:34	view:newsLists
+error:['QuerySet' object has no attribute 'orderby']
+doc:
+    新闻列表界面
+    
+2017/10/26 16:29:42	view:newsLists
+error:['QuerySet' object has no attribute 'orderBy']
+doc:
+    新闻列表界面
+    
+2017/10/26 16:30:07	view:newsLists
+error:[Cannot resolve keyword 'creatTime' into field. Choices are: content, createTime, link, newsId, newsType, status, title]
+doc:
+    新闻列表界面
+    
+2017/10/29 10:08:27	view:newsLists
+error:[(1146, "Table 'seal.seal_news' doesn't exist")]
+doc:
+    新闻列表界面
+    
+2017/10/29 10:10:17	view:newsLists
+error:[(1146, "Table 'seal.seal_news' doesn't exist")]
+doc:
+    新闻列表界面
+    

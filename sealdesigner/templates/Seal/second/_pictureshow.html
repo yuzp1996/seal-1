@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页图片管理</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap-multiselect.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/all.css">
+
+</head>
+    <!--引入公用部分-->
+    {% include "Seal/include/nav.html" %}
+<body>
+    <!--中间部分开始-->
+   <div class="content">
+        <ul class="breadcrumb">
+            <li>系统管理 <span class="divider"> >>> </span></li>
+            <li class="active">首页图片管理</li>
+            <li id="add" style=""> <span class="divider"> >>> </span>添加图片</li>
+            <li id="chang" style="display:none"><span class="divider"> >>> </span>修改图片</li>
+            <li id="lo" style="display:none"><span class="divider"> >>> </span>查看图片</li>
+            <li style="float:right"><a href="pictureShow">返回展示图片列表</a></li>
+        </ul>
+           <div class="site">
+
+               <form id="picture_form" action="/addOnePicture/" enctype="multipart/form-data" method="post" class="formstyle">
+                        <input type="hidden" id="putplace" name ="putplace" value="{{putplace}}" />
+                        <input type="hidden" id="actionid" value="{{action}}" />
+                        <input type="hidden" id="picUrl" name="picUrl" value="{{picUrl}}"/>
+                        <input type="hidden" id="pictureid" name="pictureid" value="{{pictureid}}" />
+                        <input type="hidden" id="stopJs" value="stop">
+                        <div>
+                             <nobr>
+                                 <b>图片位置：</b><select class="scinput"  name="PutPlace" id="PutPlace"><option value="1">网站logo</option><option value="2">注册和登录背景图</option><option value="3">首页轮播图片</option></select>
+                                 <input id="putPla" type="text" style="display:none">
+                                 </br></br>
+                             </nobr>
+                        </div>
+                        <div id="choose">
+                             <nobr>
+                              <input class="hidden" id="picfile" type="file" name="picfile" >
+                              <b>图片名称：</b>
+                               <input class="ImgName" id="ImgName" type="text" style="width:54%">
+                              <input type="button" id="sbPic" class="sbPic" value="浏览">
+                              </br ></br>
+                             </nobr>
+                        </div>
+                        <div>
+                             <nobr>
+                              <b>图片标题：</b><input class="scinput" id="PictureName" type="text"  name="PictureName"></br></br>
+                             </nobr>
+                        </div>
+                        <div>
+                            <nobr>
+                              <b>图片链接：</b><input class="scinput" id="PicLink" type="text"  name="PicLink"></br></br>
+                            </nobr>
+                        </div>
+              </form>
+                   <input type="button" id="buttonsave" class="btn" style="margin-left:10%" value="发布"/>
+                   <input type="button" id="changebut" class="btn" style="margin-left:10%"  value="保存" />
+                   <input type="button" id="back" class="btn" style="margin-left:10% " value="返回"/>
+           </div>
+           <div id="examplePicture" class="examplePicture">
+           </div>
+           <div id="chosePicture" class="chosePicture">
+                <p style="font-size:15px;display:block"id="name">示例图片:</p>
+                <p style="font-size:15px;display:none"id="name1">替换图片:</p>
+                <img src="" class="imgArea" />
+           </div>
+
+  </div>
+    <!--中间部分结束-->
+    <!--底部开始-->
+
+    <footer style="text-align:center;">
+        <hr>
+        <p>&copy; 2015 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部结束-->
+
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/webStatic/js/admin/first/picture.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/pageJs.js" type="text/javascript"></script>
+    <script src="/webStatic/public/jquery.form.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+    <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+</body>
+</html>
+

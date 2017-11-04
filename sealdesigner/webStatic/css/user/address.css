@@ -1,0 +1,243 @@
+/***************************************************/
+/*******************收货地址*************************/
+/***************************************************/
+.main-content{
+    position: relative;
+   /* background: #fff none repeat scroll 0 0;*/
+    padding-bottom: 30px;
+    border: 0 none;
+    color: #333;
+    font: 400 12px/1.6 arial,sans-serif;
+    margin: 0 auto;
+    width:100%;
+}
+.h2-single{
+    /*background-color:white;*/
+    font-size:14px;
+    color:red;
+    height:40px;
+    line-height:40px;
+    margin:0;
+    padding:0;
+}
+.form-box{
+    margin:3% 0% 0% 5%;
+    width:90%;
+    padding:0;
+    border:1px solid RGBA(152, 152, 152, 0.46);
+    overflow: hidden;
+}
+.item-title{
+    line-height:26px;
+}
+.form-box .item{
+   text-align:left
+   padding-bottom:10px;
+   padding-left:105px;
+   position:relative;
+   z-index:100;
+   padding-bottom:10px
+}
+.item-title{
+   line-height:26px;
+   padding-bottom:10px;
+   padding-left:105px;
+   position:relative;
+   z-index:100;
+   margin:0;
+   color:#333;
+}
+.item-label{
+    display:inline;
+    float:left;
+    height:25px;
+    line-height:26px;
+    margin-top:5px;
+    margin-left:50px;
+    width:100px;
+    color: #36c;
+    size:15px;
+}
+.item-label i{
+    color:#ff4001;
+}
+.form-box .item-title .item-label {
+    color: #fc6210;
+}
+.ts1{
+    margin-left:20px;
+    color:#B81C20;
+}
+/*新建地址栏*/
+.boxHead{
+    height:35px;
+    width:100%;
+    margin:0px auto 0 auto;
+    background:#e4e4e4;
+}
+/*
+.ks-clear::before,
+.ks-clear::after{
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.ks-clear::after {
+    clear: both;
+}
+.ks-clear::before, .ks-clear::after {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+}
+.clearfix::after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+}
+.bf-select {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 15px;
+    outline: 0 none;
+    padding: 4px 8px;
+    position: relative;
+}
+.bf-select {
+    float: left;
+    margin-right: 10px;
+}
+.sSelect {
+    width: 72px;
+}
+
+element.style {
+    -moz-user-select: none;
+}
+.bf-select {
+    float: left;
+    margin-right: 10px;
+}
+.bf-select {
+    float: left;
+    margin-right: 10px;
+}
+.lSelect {
+    width: 282px;
+}
+*/
+/*地址*/
+.SetDefault{
+    margin-left:20px;
+}
+.ks-combobox-input-wrap {
+    width:500px;;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+.form-box .i-ta {
+    border: 1px solid #afafaf;
+    display: block;
+    font-size: 12px;
+    height: 100px;
+    margin: 0;
+    padding: 3px;
+    width: 210px;
+}
+.form-box .disabled {
+    background: #f5f5f5 none repeat scroll 0 0;
+    overflow: auto;
+    vertical-align: top;
+    font-family: arial,宋体,sans-serif;
+}
+.form-box .item-warp {
+    display: inline-block;
+    position: relative;
+}
+.form-box .i-text {
+    border: 1px solid #afafaf;
+    height: 18px;
+    line-height: 18px;
+    padding: 3px;
+    vertical-align: middle;
+    width: 200px;
+}
+.form-box .item-set-default {
+    line-height: 26px;
+}
+.form-box .i-chk, .form-box label {
+    vertical-align: middle;
+    display:inline-block;
+      margin:1px 0 0;
+}
+/*保存按钮*/
+.btnn {
+    background: #B81C20 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 20px;
+    text-align: center;
+}
+.btnn:hover{
+   background-color:#A51C20;
+   background-position: 0 -15px;
+   text-decoration: none;
+   transition: background-position 0.1s linear 0s;
+}
+.address{
+    margin:3% 0% 0% 5%;
+    width:90%;
+    padding:0;
+    border:1px solid RGBA(152, 152, 152, 0.46);
+    overflow: hidden;
+}
+.addressHead{
+    height:35px;
+    width:100%;
+    margin:0px auto 0 auto;
+    background:#e4e4e4;
+}
+a{
+   color:#36c;
+   text-decration:none;
+}
+.hadAdd{
+    color: #fc6210;
+}
+.userAddInfo {
+    width:85%;
+    min-height:90px;
+    border:solid 1px #898989;
+    box-shadow: 7px 6px 6px #898989;
+    margin:2% 0% 2% 5%;
+    padding:0px;
+    overflow:hidden;
+}
+.userAddInfo li:nth-child(4) {
+    font-size:13px;
+    float:right;
+    margin-right:10px;
+}
+.userAddInfo li{
+    margin:1px 0px 0px 30px;
+}

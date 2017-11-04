@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/*优惠券样式*/
+.coupon{
+    float:right;
+    margin:30px 60px 30px 0;
+}
+
+/*购物车表格样式*/
+.cartList{ width:90%;margin:0 auto 0;min-height:400px;}
+.cartList table {margin-top:10px;color:#333333;text-align:center;letter-spacing:2px;width:100%;border-collapse:collapse;cursor:pointer;}
+.cartList table th { height:30px;}
+.cartList table td { height:100px;}
+.cartList table th,td {border:1px solid #C8C8CB;}
+.cartList table tr:hover { background:#F6F6F6;}
+
+/*底部结算部分样式*/
+.count{
+    height:70px;
+    margin-top:60px;
+}
+.account{
+    float:right;
+    height:40px;
+    line-height:40px;
+    margin-right:60px;
+    border:1px solid #C8C8CB;
+}
+.accNum{
+    float:left;
+    margin-left:40px;
+    margin-right:60px;
+}
+.accPri{
+    float:left;
+    margin-right:60px;
+}
+.accGo{
+    float:left;
+    margin-right:40px;
+}
+.go{
+    width: 50px;
+    height:30px;
+    background: #f0f0f0 none repeat-x scroll 0 0;
+    border-color: #ddd;
+    border-style: solid;
+    border-width: 2px;
+}

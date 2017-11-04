@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>企业类型管理</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/all.css">
+    <style>
+        .row-fluid table th, td {
+            height:auto;
+        }
+    </style>
+
+    <!-- Demo page code -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <body class="">
+  <!--<![endif]-->
+    <!--引入公用部分-->
+    {% include "Seal/include/nav.html" %}
+
+    <!--中间部分-->
+    <div class="content">
+        <ul class="breadcrumb">
+            <input type="hidden" id="stopJs" value="stop">
+            <li>基础数据管理<span class="divider"> >>> </span></li>
+            <li class="active">企业类型管理</li>
+        </ul>
+        <div class="header">
+            <div class="addenterprise">
+                <!--企业类型下拉列表-->
+                <div class="type-of-enterprise">
+                    企业类型：
+                    <select name="Ep-select" class="epChoose" style="height:30px;width:auto;margin-top:1px;">
+                        <!--后台读取数据-->
+                    </select>
+                    <button class="addButton" type="button" href='#modal-container-123456' data-toggle='modal' style="height:30px;width:100px;margin-top:-8px;margin-left:10px;">
+                        <i class="icon-plus"></i>
+                        添加企业
+                    </button>
+                </div>
+            </div>
+            <!--加入空div清除父级带来的浮动-->
+            <div></div>
+        </div>
+
+        <div class="row-fluid" id="user_tab">
+            <table class="ep-append">
+                <thead>
+                    <tr>
+                        <th width="20%" class="EnterpriseName">企业类型</th>
+                        <th width="25%" class="enterNeed">所需附件</th>
+                        <th width="20%" class="isShow">是否启用</th>
+                        <th width="20%" class="byRegisterTime">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="lists">
+                    <!--后台读取数据-->
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+                <center>
+                    <ul class="page">
+                        <!--数据库调取分页-->
+                    </ul>
+                </center>
+        </div>
+
+        <!--  触发遮罩窗体-->
+        <div class="ep-span12">
+            <div id="modal-container-123456" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="height:auto;width:500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 >企业类型详情:</h3>
+                </div>
+                <div style="overflow:auto;">
+                    <br>
+                        <div align="center" style="border:0;">
+                            <table class="enp-tab" style="">
+                                <tr>
+                                    <th>企业类型:</th>
+                                    <td style="border:0;"><input type="text" class="ep-type" style="margin-left:10px;width:150px;margin-top:5px;" /></td>
+                                    <td style="border:0;">
+                                        <input type="button" value="-" name="enpTypeSub" class="btnControl">
+                                        <input type="hidden" class="companyId">     <!--隐藏域-->
+                                    </td>
+                                </tr>
+                                <tr class="enterPriseNeed">
+                                    <th>初次刻章所需附件:</th>
+                                    <td style="border:0;"><input type="button" value="+" class="enp-type-add" style="margin-left:10px;width:35px;height:30px;font-size:25px;"></td>
+                                    <td style="border:0;"></td>
+                                </tr>
+                                <tr  class="ep-information"><!--用于重载后面添加进来的tr-->
+                                </tr>
+                                <tr class="ep-informationFirst">
+                                    <th>附件名:</th>
+                                    <td style="border:0;"><input type="text" class="ep-informationList" style="margin-left:10px;width:150px;margin-top:5px;"></td>
+                                    <td style="border:0;">
+                                        <input type="button" value="-" name="enterpriseTypeSub" style="width:35px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>是否启用:</th>
+                                    <td style="border:none;"><input type="radio" value="1" name="isShowRadio" style="margin-left:15px"><b>是</b><input type="radio" value="0" name="isShowRadio" style="margin-left:30px"><b>否</b></td>
+                                </tr>
+                            </table>
+                        </div>
+                    <br>
+                </div>
+                <div class="modal-footer" >
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button> <input type="button" class="btn btn-primary btn-add" value="添加" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--中间部分结束-->
+    <!--底部开始-->
+    <footer>
+        <hr>
+        <p>&copy; 2016 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部开始-->
+
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/webStatic/js/admin/first/EnterpriseType.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/pageJs.js" type="text/javascript"></script>
+    <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+    <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+  	<!--page公用的js-->
+</body>
+</html>

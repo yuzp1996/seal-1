@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>套餐管理</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="/webStatic/public/lib/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="/webStatic/css/admin/stylesheets/theme.css">
+    <link rel="stylesheet" href="/webStatic/public/lib/font-awesome/css/font-awesome.css">
+
+
+
+    <!-- Demo page code -->
+
+    <style type="text/css">
+        .brand { font-family: georgia, serif; }
+        .brand .first {
+            color: #ccc;
+            font-style: italic;
+        }
+        .brand .second {
+            color: #fff;
+            font-weight: bold;
+        }
+        .row-fluid { width:90%;margin:0 auto 0;}
+        .row-fluid table {margin-top:10px;color:#333333;text-align:center;letter-spacing:2px;width:100%;border-collapse:collapse;cursor:pointer;}
+        .row-fluid table th { height:30px;}
+        .row-fluid table th,td { width:25%;border:1px solid #C8C8CB;}
+        .row-fluid table tr:hover { background:#F6F6F6;}
+        .footer { margin-top:0em;}
+    </style>
+
+  </head>
+
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <body class="">
+  <!--<![endif]-->
+    <!--引入公用部分-->
+    {% include "Seal/include/nav.html" %}
+    <!--中间部分结束-->
+                <div class="span12">
+                      <!--  触发遮罩窗体-->
+                    <!--添加商品-->
+                    <div id="modal-container-2" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+                         style="height:350px;width:200px">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 >
+                                绑定套餐:
+                            </h3>
+                        </div>
+                        <div>
+                            <br>
+                            <div>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;选择商品:<select  id="goods"  style="width:80px"><option value="0">请选择</option></select></td><br>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;绑定套餐:<select  id="bindCoupos"  style="width:80px"><option value="0">请选择</option></select></td><br>
+                            </div>
+                            <br>
+                            <div>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;是否显示:&nbsp;&nbsp;&nbsp;&nbsp;是：<input name="show" type="radio" value="1" />&nbsp;&nbsp;&nbsp;&nbsp;否：<input name="show" type="radio" value="0" /></td>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer" >
+                             <button id="bindCancel" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭</button><button id="bindadd" class="btn btn-primary">添加</button>
+                        </div>
+                    </div>
+                     <!--添加商品-->
+                    <div id="modal-container-1" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+                         style="height:350px;width:200px">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 >
+                                添加套餐:
+                            </h3>
+                        </div>
+                        <div>
+                            <br>
+                            <div>
+                                <!--<td>&nbsp;&nbsp;&nbsp;&nbsp;商品类别:<select  id="Maadd"  style="width:80px"><option value="0">请选择</option></select></td><br>-->
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;套裁名称:<input id="couposName" style="width:80px" ></td><br><br>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;优惠价格:<input id="couposPrice" style="width:80px" ></td><br><br>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;套餐备注:<input id="couposRemark" style="width:80px" ></td><br><br>
+                            </div>
+                            <br>
+                            <div>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;是否显示:&nbsp;&nbsp;&nbsp;&nbsp;是：<input name="show" type="radio" value="1" />&nbsp;&nbsp;&nbsp;&nbsp;否：<input name="show" type="radio" value="0" /></td>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer" >
+                             <button id="gdCancel" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭</button><button id="gdbtnadd" class="btn btn-primary">添加</button>
+                        </div>
+                    </div>
+                </div>
+
+    <!--底部开始-->
+    <footer style="text-align:center;">
+        <hr>
+        <p>&copy; 2015 <b>华北理工大学智慧软件应用研发工作室</b></p>
+    </footer>
+    <!--底部开始-->
+
+    <script src="/webStatic/public/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/webStatic/public/lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $("[rel=tooltip]").tooltip();
+        $(function() {
+            $('.demo-cancel-click').click(function(){return false;});
+        });
+    </script>
+  <script src="/webStatic/js/admin/first/material/coupos.js" type="text/javascript"></script>
+  <script src="/webStatic/js/public/open_admin_nav_js.js" type="text/javascript"></script>
+  <script src="/webStatic/js/public/jquery.cookie.js" type="text/javascript"></script>
+
+  <script src="/webStatic/downloads/jquery.jplayer.js"></script>
+
+</body>
+</html>
